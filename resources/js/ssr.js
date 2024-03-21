@@ -21,5 +21,15 @@ createServer((page) =>
                     location: new URL(page.props.ziggy.location),
                 });
         },
+        progress: {
+            // The delay after which the progress bar will appear, in milliseconds...
+            delay: 250,
+
+            // The color of the progress bar...
+            color: '#fe5a35',
+
+            // Whether the NProgress spinner will be shown...
+            showSpinner: true,
+        },
     })
 );
