@@ -16,29 +16,29 @@ const toggleSidebar = () => {
         <div class="mx-auto max-w-screen-2xl">
 
             <div class="relative lg:flex max-w-screen overflow-x-clip">
+                <!-- left sidebar -->
+                <div :class="isOpen ? 'translate-x-0 border shadow-lg' : '-translate-x-full lg:-translate-x-0'" class="absolute lg:static transition-all ease-in-out bg-[#f5f7f9]
+            lg:min-h-screen w-[80%] sm:w-[60%] md:w-[50%] lg:w-[30%] lg:pl-1 pr-5 text-gray-800 space-x-4 space-y-6 border-r">
+                    <sidebar-items :is-dashboard="true" @toggle-sidebar="toggleSidebar"/>
+                </div>
+
                 <!-- main content -->
                 <div class="w-full py-4 sm:px-5">
 
-                    <div class="flex items-center justify-between px-5 py-1">
+                    <div class="flex items-center justify-between px-5 lg:px-0 py-1">
                         <h1 class="tracking-wide">
-                            <Link href="http://localhost:8000/">levintoo.com</Link>
-                            <span class="text-primary"> / </span>
-                            <slot name="breadcrumbs">home</slot>
+                            <span>levintoo.com </span>
+                            <slot name="breadcrumbs"/>
                         </h1>
-                        <button class="flex" @click="toggleSidebar">
+                        <button class="flex lg:hidden" @click="toggleSidebar">
                             <Hamburger class="text-gray h-8 w-auto rounded-md border-2 border-primary"/>
                         </button>
                     </div>
 
-                    <slot/>
+                    <slot />
 
                 </div>
 
-                <!-- right sidebar -->
-                <div :class="isOpen ? 'translate-x-0 border shadow-lg' : 'translate-x-full'" class="transition-all ease-in-out bg-[#f5f7f9] absolute top-0 right-0
-            lg:min-h-screen w-[80%] sm:w-[60%] md:w-[50%] lg:w-[35%] pr-5 text-gray-800 space-x-4 space-y-6 border-r">
-                    <SidebarItems @toggle-sidebar="toggleSidebar"/>
-                </div>
             </div>
 
             <div class="py-4 sm:px-5">

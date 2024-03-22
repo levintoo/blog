@@ -15,8 +15,8 @@ export default {
             colors: {
                 primary: '#fe5a35',
                 secondary: '',
-                accent: '',
-                background: '',
+                accent: '#dce3eb',
+                background: '#f5f7f9',
                 text: '',
                 error: '',
                 success: '',
