@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-    <div v-show="isOpen" :class="isOpen ? 'translate-x-0 border shadow-lg' : 'translate-x-full'" class="transition-all ease-in-out bg-[#f5f7f9] absolute top-0 right-0
+    <div :class="isOpen ? 'translate-x-0 border shadow-lg' : 'translate-x-full'" class="transition-all ease-in-out bg-[#f5f7f9] absolute top-0 right-0
             lg:min-h-screen w-[80%] sm:w-[60%] md:w-[50%] lg:w-[35%] pr-5 text-gray-800 space-x-4 space-y-6 border-r">
         <div aria-hidden="true"></div>
         <div class="flex items-center justify-between space-x-2">
