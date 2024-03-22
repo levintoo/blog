@@ -15,7 +15,7 @@ const toggleSidebar = () => {
     <div class="bg-[#dce3eb]/30 min-h-screen">
         <div class="mx-auto max-w-screen-2xl">
 
-            <div class="relative lg:flex max-w-screen">
+            <div class="relative lg:flex max-w-screen overflow-x-clip">
                 <!-- main content -->
                 <div class="w-full py-4 sm:px-5">
                     <div class="w-full">
