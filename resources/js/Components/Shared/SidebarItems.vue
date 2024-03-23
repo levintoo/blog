@@ -33,73 +33,90 @@ const emit = defineEmits(['toggle-sidebar'])
             <Close class="text-gray h-8 w-auto text-primary"/>
         </button>
     </div>
+
     <template v-if="!$page.url.startsWith('/dashboard')">
-    <div class="flex items-center space-x-3">
-        <Fire class="w-auto h-5 text-primary"/>
-        <p class="text-sm text-gray-800">Top Posts</p>
-    </div>
-    <div class="flex items-center space-x-3">
-        <Post class="w-auto h-5"/>
-        <p class="text-sm text-gray-800">Latest Posts</p>
-    </div>
+        <Link :class="$page.url === '/posts/top' ? 'text-primary font-medium' : '' "
+              class="flex items-center space-x-3 hover:text-primary/80" href="/posts/top">
+            <Fire class="w-auto h-5 text-primary"/>
+            <span class="text-sm">Top Posts</span>
+        </Link>
+        <Link :class="$page.url === '/posts/latest' ? 'text-primary font-medium' : '' "
+              class="flex items-center space-x-3 hover:text-primary/80" href="/posts/latest">
+            <Post class="w-auto h-5"/>
+            <span class="text-sm">Latest Posts</span>
+        </Link>
     </template>
 
-    <Link href="/" class="flex items-center space-x-3">
+    <Link :class="$page.url === '/' ? 'text-primary font-medium' : '' "
+          class="flex items-center space-x-3 hover:text-primary/80" href="/">
         <Home class="w-auto h-5"/>
-        <p class="text-sm text-gray-800">Home</p>
+        <p class="text-sm">Home</p>
     </Link>
-<template v-if="!$page.url.startsWith('/dashboard')">
-    <hr/>
-    <div class="flex items-center space-x-3">
-        <Search class="w-auto h-5"/>
-        <p class="text-sm text-gray-800">Search</p>
-    </div>
-    <a class="flex items-center space-x-3 hover:text-primary/80" href="/public">
-        <Info class="w-auto h-5"/>
-        <p class="text-sm">About</p>
-    </a>
-    <a class="flex items-center space-x-3 hover:text-primary/80" href="/public">
-        <Send class="w-auto h-5"/>
-        <p class="text-sm">Contact</p>
-    </a>
-</template>
+
+    <template v-if="!$page.url.startsWith('/dashboard')">
+        <hr/>
+        <Link href="/" class="hidden items-center space-x-3">
+            <Search class="w-auto h-5"/>
+            <p class="text-sm text-gray-800">Search</p>
+        </Link>
+        <Link :class="$page.url === '/about' ? 'text-primary font-medium' : '' "
+              class="flex items-center space-x-3 hover:text-primary/80" href="/about">
+            <Info class="w-auto h-5"/>
+            <p class="text-sm">About</p>
+        </Link>
+        <Link :class="$page.url === '/send#contact' ? 'text-primary font-medium' : '' "
+              class="flex items-center space-x-3 hover:text-primary/80" href="/about#contact">
+            <Send class="w-auto h-5"/>
+            <p class="text-sm">Contact</p>
+        </Link>
+    </template>
+
     <template v-if="$page?.props?.auth?.user">
         <hr/>
         <div class="space-y-6">
             <h2>Admin</h2>
-            <Link :class="$page.url === '/dashboard' ? 'text-primary font-medium' : '' " class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard">
+            <Link :class="$page.url === '/dashboard' ? 'text-primary font-medium' : '' "
+                  class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard">
                 <Dashboard class="w-auto h-5"/>
                 <span class="text-sm">Dashboard</span>
             </Link>
-            <Link :class="$page.url.startsWith('/dashboard/profile') ? 'text-primary font-medium' : '' " class="flex items-center space-x-3 hover:text-primary/80" href="/profile">
+            <Link :class="$page.url === '/dashboard/posts' ? 'text-primary font-medium' : '' "
+                  class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/posts">
+                <Post class="w-auto h-5"/>
+                <span class="text-sm">Posts</span>
+            </Link>
+            <Link :class="$page.url.startsWith('/dashboard/profile') ? 'text-primary font-medium' : '' "
+                  class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/profile">
                 <CogWheel class="w-auto h-5"/>
                 <span class="text-sm">Profile</span>
             </Link>
-            <Link as="button" class="flex items-center space-x-3 hover:text-primary/80" method="POST" href="/logout">
+            <Link as="button" class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/logout" method="POST">
                 <Power class="w-auto h-5"/>
                 <span class="text-sm">Logout</span>
             </Link>
         </div>
     </template>
+
     <hr/>
+
     <div class="space-y-6">
         <h2>Socials</h2>
         <div class="flex items-center space-x-4">
             <div class="text-transparent bg-primary w-[6px] h-[6px] rounded-full">.</div>
-            <a href="/" class="text-sm">
+            <a target="_blank" class="text-sm" href="https://github.com/levintoo">
                 Github
             </a>
         </div>
         <div class="flex items-center space-x-4">
             <div class="text-transparent bg-primary w-[6px] h-[6px] rounded-full">.</div>
-            <a href="/" class="text-sm">
+            <a target="_blank" class="text-sm" href="https://twitter.com/_m0ssad">
                 Twitter(X)
             </a>
         </div>
         <div class="flex items-center space-x-4">
             <div class="text-transparent bg-primary w-[6px] h-[6px] rounded-full">.</div>
-            <a href="/" class="text-sm">
-                Instagram
+            <a target="_blank" class="text-sm" href="https://www.linkedin.com/in/levin-kipkemboi">
+                Linkedin
             </a>
         </div>
         <div aria-hidden="true"></div>

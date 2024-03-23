@@ -1,0 +1,93 @@
+<template>
+    <div class="py-4 sm:px-5 bg-gray-200 z-0">
+        <footer class="relative pt-8 pb-6 px-5">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap text-left lg:text-left">
+                    <div class="lg:w-2/5 px-4 space-y-4">
+                        <h4 class="text-3xl font-semibold text-gray-700">Let's keep in touch!</h4>
+                        <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
+                            Find me on any of these platforms.
+                        </h5>
+                        <div class="mt-6 lg:mb-0 mb-6 flex">
+                            <a href="https://twitter.com/_m0ssad" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <Twitter />
+                            </a>
+                            <a target="_blank" href="https://www.linkedin.com/in/levin-kipkemboi" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <Linkedin />
+                            </a>
+                            <a target="_blank" href="https://https:instagram.com" class="flex items-center justify-center bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <Instagram />
+                            </a>
+                            <a target="_blank" href="https://github.com/levintoo" class="flex items-center justify-center bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <Github />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:w-3/5 px-4">
+                        <div class="flex flex-wrap items-top space-y-4 lg:space-y-0 mt-6 lg:mt-0">
+                            <div class="w-full lg:w-1/3 lg:px-4 ml-auto space-y-2.5">
+                                <span class="block text-gray-800 font-semibold">Top Picks</span>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <Link href="/" class="underline text-blueGray-600 hover:text-gray-800 block text-sm">
+                                            How To Install and Use Composer on Ubuntu 20.04
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/" class="underline text-blueGray-600 hover:text-gray-800 block text-sm">
+                                            Laravel 11 upgrade guide
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-1/3 lg:px-4 ml-auto space-y-2.5">
+                                <span class="block text-gray-800 font-semibold">Navigation</span>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/">Home</Link>
+                                    </li>
+                                    <li>
+                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/posts/latest">Latest Posts</Link>
+                                    </li>
+                                    <li>
+                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/posts/top">Top Posts</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/about" class="underline text-blueGray-600 hover:text-gray-800 block text-sm">About</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-1/3 lg:px-4 ml-auto space-y-2.5">
+                                <span class="block text-gray-800 font-semibold">Others</span>
+                                <ul class="space-y-2">
+                                    <li>
+                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="">Terms of Service</Link>
+                                    </li>
+                                    <li>
+                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="">Privacy policy</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-gray-300">
+                <div class="flex flex-wrap items-center md:justify-between justify-center">
+                    <div class="w-full px-4 mx-auto text-center">
+                        <div class="text-gray-800">
+                            © Levin all rights reserved. Proudly hosted on <a target="_blank" href="#" class="underline">Hostme</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</template>
+
+<script setup>
+import {Link} from "@inertiajs/vue3";
+import Twitter from "@/Components/Icons/Twitter.vue";
+import Github from "@/Components/Icons/Github.vue";
+import Linkedin from "@/Components/Icons/Linkedin.vue";
+import Instagram from "@/Components/Icons/Instagram.vue";
+</script>

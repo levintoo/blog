@@ -3,6 +3,7 @@ import {ref} from "vue";
 import {Link} from "@inertiajs/vue3";
 import Hamburger from "@/Components/Icons/Hamburger.vue";
 import SidebarItems from "@/Components/Shared/SidebarItems.vue";
+import Footer from "@/Components/Shared/Footer.vue";
 
 const isOpen = ref(false)
 
@@ -27,7 +28,7 @@ const toggleSidebar = () => {
 
                     <div class="flex items-center justify-between px-5 lg:px-0 py-1">
                         <h1 class="tracking-wide">
-                            <span>levintoo.com </span>
+                            <Link href="/dashboard">levintoo.com </Link>
                             <slot name="breadcrumbs"/>
                         </h1>
                         <button class="flex lg:hidden" @click="toggleSidebar">
@@ -39,12 +40,6 @@ const toggleSidebar = () => {
 
                 </div>
 
-            </div>
-
-            <div class="py-4 sm:px-5">
-                <footer class="px-5">
-                    footer
-                </footer>
             </div>
 
         </div>
