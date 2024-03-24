@@ -21,11 +21,11 @@ const toggleSidebar = () => {
                 <div class="w-full py-4 sm:px-5">
 
                     <div class="flex items-center justify-between px-5 py-1">
-                        <h1 class="tracking-wide">
+                        <h3 class="tracking-wide">
                             <Link href="/">levintoo.com</Link>
                             <span class="text-primary"> / </span>
                             <slot name="breadcrumbs">home</slot>
-                        </h1>
+                        </h3>
                         <button class="flex" @click="toggleSidebar">
                             <Hamburger class="text-gray h-8 w-auto rounded-md border-2 border-primary"/>
                         </button>
@@ -36,7 +36,7 @@ const toggleSidebar = () => {
                 </div>
 
                 <!-- right sidebar -->
-                <div :class="isOpen ? 'translate-x-0 border shadow-lg' : 'translate-x-full'" class="transition-all ease-in-out bg-[#f5f7f9] absolute top-0 right-0
+                <div :class="isOpen ? 'translate-x-0 border shadow-lg' : 'translate-x-full'" class="z-50 transition-all ease-in-out bg-[#f5f7f9] absolute top-0 right-0
             lg:min-h-screen w-[80%] sm:w-[60%] md:w-[50%] lg:w-[35%] pr-5 text-gray-800 space-x-4 space-y-6 border-r">
                     <SidebarItems @toggle-sidebar="toggleSidebar"/>
                 </div>

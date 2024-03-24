@@ -4,9 +4,15 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 import {ref} from "vue";
 
 defineProps({
-    laravelVersion: {
-        type: String,
+    latestPosts: {
+        type: Object,
         required: true,
+        default: {},
+    },
+    topPosts: {
+        type: Object,
+        required: true,
+        default: {},
     },
 });
 
@@ -38,17 +44,6 @@ const isOpen = ref(false)
         <meta property="twitter:description"
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
         <meta property="twitter:image" content="https://levintoo.com/img/og-image.jpg">
-
-        <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-        <link rel="manifest" href="/img/site.webmanifest">
-        <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#fe5a35">
-        <link rel="shortcut icon" href="/favicon.ico">
-
-        <meta name="theme-color" content="#ffffff">
-        <meta name="color-scheme" content="light">
     </Head>
 
     <AppLayout>
@@ -64,9 +59,9 @@ const isOpen = ref(false)
                     In the world of programming the digital landscape is vast and continuously evolving, there's a lot to explore, and things
                     can change fast. From essential tips to advanced techniques join me as we learn, share, and grow together.
                 </p>
-                <Link href="/"
+                <Link href="/posts/latest"
                       class="mx-auto bg-primary text-white font-sm font-medium rounded px-6 py-3 hover:shadow-2xl shadow-primary">
-                    Get started
+                    Start Reading
                 </Link>
             </div>
         </div>
@@ -76,38 +71,24 @@ const isOpen = ref(false)
                 Trending articles
             </h2>
             <div class="grid grid-cols-1 px-4 mx-auto sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 gap-y-12">
-                <article class="space-y-3" v-for="i in [1, 2, 3, 4, 5, 6]">
-                    <Link href="/" class="font-light text-sm bg-white">
+                <article class="space-y-3" v-for="post in topPosts">
+                    <Link :href="`/${post.slug}`" class="font-light text-sm bg-white">
                         <img class="mx-auto transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg"
-                             src="/assets/post.svg" alt="post.svg" />
+                             :src="`/uploads/${post.image}`" :alt="post.title" />
                     </Link>
                     <div class="space-y-3 lg:px-1">
-                        <Link href="/" class="font-medium text-sm text-blue-700 underline hover:text-blue-900">
-                            Upgrading
-                            Your Laravel
-                            Application
-                            from 10
-                            to 11: A
-                            Step-by-Step Guide
+                        <Link :href="`/${post.slug}`" class="font-medium text-sm text-blue-700 underline hover:text-blue-900">
+                            {{ post.title }}
                         </Link>
                         <p class="text-sm text-gray-900">
-                            Laravel 11 was released recently. This is relevant new change and feature you need to know about.
+                            {{ post.description }}
                         </p>
-                        <p class="text-gray-600 text-sm font-light">Posted 29th april,
-                            2020
+                        <p class="text-gray-600 text-sm font-light">Posted {{ post.created}}
                         </p>
                         <div class="space-x-2 space-y-2">
-<!--                            <button-->
-<!--                                class="px-2 py-1 text-xs font-medium text-white bg-red-500 border rounded whitespace-nowrap w-fit">-->
-<!--                                laravel-->
-<!--                            </button>-->
-<!--                            <button-->
-<!--                                class="px-2 py-1 text-xs font-medium text-white bg-green-500 border rounded whitespace-nowrap w-fit">-->
-<!--                                vue-->
-<!--                            </button>-->
                             <button
                                 class="px-1 py-1/1 text-xs font-light border rounded whitespace-nowrap w-fit">
-                                Laravel
+                                {{ post.tag }}
                             </button>
                         </div>
                     </div>
@@ -115,16 +96,34 @@ const isOpen = ref(false)
             </div>
         </div>
 
-        <div class="w-full py-10 sm:px-5">
-            <h2 class="text-2xl font-semibold text-center text-gray-800">
-                Top articles
-            </h2>
-        </div>
-
-        <div class="w-full py-10 sm:px-5">
+        <div class="w-full py-10 space-y-10 sm:pl-5">
             <h2 class="text-2xl font-semibold text-center text-gray-800">
                 Latest articles
             </h2>
+            <div class="grid grid-cols-1 px-4 mx-auto sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 gap-y-12">
+                <article class="space-y-3" v-for="post in latestPosts">
+                    <Link :href="`/${post.slug}`" class="font-light text-sm bg-white">
+                        <img class="mx-auto transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg"
+                             :src="`/uploads/${post.image}`" :alt="post.title" />
+                    </Link>
+                    <div class="space-y-3 lg:px-1">
+                        <Link :href="`/${post.slug}`" class="font-medium text-sm text-blue-700 underline hover:text-blue-900">
+                            {{ post.title }}
+                        </Link>
+                        <p class="text-sm text-gray-900">
+                            {{ post.description }}
+                        </p>
+                        <p class="text-gray-600 text-sm font-light">Posted {{ post.created}}
+                        </p>
+                        <div class="space-x-2 space-y-2">
+                            <button
+                                class="px-1 py-1/1 text-xs font-light border rounded whitespace-nowrap w-fit">
+                                {{ post.tag }}
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </AppLayout>
 </template>

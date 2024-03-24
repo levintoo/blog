@@ -52,6 +52,18 @@ Route::middleware(['auth', 'verified'])
             });
 });
 
+Route::get('about', function () {
+    return inertia('About');
+});
+
+Route::get('privacy-policy', function () {
+    return inertia('PrivacyPolicy');
+});
+
+Route::get('terms-of-service', function () {
+    return inertia('TermsOfService');
+});
+
 Route::prefix('posts')
 
     ->name('posts.')
@@ -64,7 +76,8 @@ Route::prefix('posts')
 
         Route::get('/top', 'top')->name('top');
 
-        Route::get('/{slug}', 'show')->name('show');
     });
 
 require __DIR__.'/auth.php';
+
+Route::get('/{slug}', [PostController::class, 'show'])->name('show');

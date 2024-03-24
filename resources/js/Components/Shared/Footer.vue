@@ -29,12 +29,12 @@
                                 <span class="block text-gray-800 font-semibold">Top Picks</span>
                                 <ul class="space-y-2">
                                     <li>
-                                        <Link href="/" class="underline text-blueGray-600 hover:text-gray-800 block text-sm">
-                                            How To Install and Use Composer on Ubuntu 20.04
+                                        <Link href="/" class="underline hover:text-gray-800 block text-sm">
+                                            Top web development tools
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/" class="underline text-blueGray-600 hover:text-gray-800 block text-sm">
+                                        <Link href="/" class="underline hover:text-gray-800 block text-sm">
                                             Laravel 11 upgrade guide
                                         </Link>
                                     </li>
@@ -47,13 +47,13 @@
                                         <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/">Home</Link>
                                     </li>
                                     <li>
-                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/posts/latest">Latest Posts</Link>
-                                    </li>
-                                    <li>
                                         <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/posts/top">Top Posts</Link>
                                     </li>
                                     <li>
                                         <Link href="/about" class="underline text-blueGray-600 hover:text-gray-800 block text-sm">About</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/about#contact" class="underline text-blueGray-600 hover:text-gray-800 block text-sm">Contact</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -61,10 +61,10 @@
                                 <span class="block text-gray-800 font-semibold">Others</span>
                                 <ul class="space-y-2">
                                     <li>
-                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="">Terms of Service</Link>
+                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/terms-of-service">Terms of Service</Link>
                                     </li>
                                     <li>
-                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="">Privacy policy</Link>
+                                        <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/privacy-policy">Privacy policy</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -75,7 +75,7 @@
                 <div class="flex flex-wrap items-center md:justify-between justify-center">
                     <div class="w-full px-4 mx-auto text-center">
                         <div class="text-gray-800">
-                            © Levin all rights reserved. Proudly hosted on <a target="_blank" href="#" class="underline">Hostme</a>
+                            © {{ new Date().getFullYear() }} all rights reserved. Proudly hosted on <a target="_blank" href="#" class="underline">Hostme</a>
                         </div>
                     </div>
                 </div>

@@ -25,10 +25,10 @@ const emit = defineEmits(['toggle-sidebar'])
 <template>
     <div aria-hidden="true"></div>
     <div class="flex items-center justify-between space-x-2">
-        <div class="flex items-center space-x-2">
+        <Link href="/" class="flex items-center space-x-2">
             <Levin class="w-auto text-gray-700 h-9"/>
-            <h1 class="py-4 text-xl font-semibold">levintoo<span class="text-primary">.</span>com</h1>
-        </div>
+            <p class="py-4 text-xl font-semibold">levintoo<span class="text-primary">.</span>com</p>
+        </Link>
         <button :class="isDashboard ? 'lg:hidden' : '' " class="flex" @click="$emit('toggle-sidebar')">
             <Close class="text-gray h-8 w-auto text-primary"/>
         </button>
@@ -90,7 +90,7 @@ const emit = defineEmits(['toggle-sidebar'])
                 <CogWheel class="w-auto h-5"/>
                 <span class="text-sm">Profile</span>
             </Link>
-            <Link as="button" class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/logout" method="POST">
+            <Link as="button" class="flex items-center space-x-3 hover:text-primary/80" href="/logout" method="POST">
                 <Power class="w-auto h-5"/>
                 <span class="text-sm">Logout</span>
             </Link>

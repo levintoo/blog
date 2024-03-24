@@ -53,18 +53,18 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(String $slug)
+    public function edit(String $id)
     {
-        $post = Post::where('slug',$slug)->firstorfail();
+        $post = Post::findorfail($id);
         return inertia('Dashboard/Posts/Edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, String $slug)
+    public function update(UpdatePostRequest $request, String $id)
     {
-        $post = Post::where('slug',$slug)->firstorfail();
+        $post = Post::findorfail($id);
 
         $validated = $request->validated();
 

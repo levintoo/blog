@@ -14,6 +14,7 @@ const props = defineProps({
 })
 
 const form = useForm({
+    id: props.post.id,
     title: props.post.title,
     slug: props.post.slug,
     description: props.post.description,
@@ -22,7 +23,7 @@ const form = useForm({
 })
 
 function handleSubmit() {
-    form.patch('/dashboard/posts/edit/' + props.post.slug, {
+    form.patch('/dashboard/posts/edit/' + props.post.id, {
         preserveScroll: true,
         onSuccess: () => {
             form.reset()

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,9 +12,39 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return inertia('Welcome', [
-            'laravelVersion' => '11 i guess',
+        $latestPosts = Post::query()
+
+            ->limit(3)
+
+            ->select('title','slug','created_at','description','tag','image')
+
+            ->latest()
+
+            ->get()->map(fn($post) => [
+                'title' => $post->title,
+                'description' => $post->description,
+                'created' => $post->created_at->diffForHumans(),
+                'tag' => $post->tag,
+                'slug' => $post->slug,
+                'image' => $post->image
         ]);
+        $topPosts = Post::query()
+
+            ->limit(3)
+
+            ->select('title','slug','created_at','description','tag','image')
+
+            ->inRandomOrder()
+
+            ->get()->map(fn($post) => [
+                'title' => $post->title,
+                'description' => $post->description,
+                'created' => $post->created_at->diffForHumans(),
+                'tag' => $post->tag,
+                'slug' => $post->slug,
+                'image' => $post->image
+        ]);
+        return inertia('Welcome', compact('latestPosts','topPosts'));
     }
 
     /**

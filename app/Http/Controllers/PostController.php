@@ -15,7 +15,15 @@ class PostController extends Controller
      */
     public function top()
     {
-        return inertia('Posts/Top');
+        $posts = Post::query()->select('slug', 'description','tag','created_at','title','image')->inRandomOrder()->paginate()->through(fn($post) => [
+            'title' => $post->title,
+            'image' => $post->image,
+            'slug' => $post->slug,
+            'description' => $post->description,
+            'tag' => $post->tag,
+            'created' => $post->created_at->diffForHumans()
+        ]);
+        return inertia('Posts/Top', compact('posts'));
     }
 
     public function latest()
@@ -61,6 +69,7 @@ class PostController extends Controller
             'created' => $post->created_at->diffForHumans(),
             'tag' => $post->tag,
             'slug' => $post->slug,
+            'image' => $post->image,
         ]);
 
         return inertia('Posts/Show', compact('post'));

@@ -76,7 +76,7 @@ defineProps({
                                                 </td>
                                                 <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap space-x-3">
                                                     <a target="_blank" class="underline hover:text-blue-600" :href="`/posts/${post.slug}`">Preview</a>
-                                                    <Link class="underline hover:text-blue-600" :href="`/dashboard/posts/edit/${post.slug}`">Edit</Link>
+                                                    <Link class="underline hover:text-blue-600" :href="`/dashboard/posts/edit/${post.id}`">Edit</Link>
                                                     <Link method="DELETE" as="button" class="underline text-red-500 hover:text-red-400" :href="`/dashboard/posts/${post.id}/delete`">Delete</Link>
                                                 </td>
                                             </tr>

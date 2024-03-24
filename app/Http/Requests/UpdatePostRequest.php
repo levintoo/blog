@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Post;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdatePostRequest extends FormRequest
 {
@@ -22,9 +24,10 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => ['required'],
             'title' => ['nullable','max:255'],
             'tag' => ['nullable','max:255'],
-            'slug' => ['nullable','unique:posts','max:255'],
+            'slug' => ['nullable', Rule::unique('posts', 'slug')->ignore($this->id),'max:255'],
             'description' => ['nullable','max:2550'],
             'body' => ['nullable'],
         ];
