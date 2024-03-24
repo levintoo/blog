@@ -11,6 +11,7 @@ import Post from "@/Components/Icons/Post.vue";
 import Home from "@/Components/Icons/Home.vue";
 import Info from "@/Components/Icons/Info.vue";
 import Send from "@/Components/Icons/Send.vue";
+import Person from "@/Components/Icons/Person.vue";
 
 defineProps({
     isDashboard: {
@@ -85,9 +86,14 @@ const emit = defineEmits(['toggle-sidebar'])
                 <Post class="w-auto h-5"/>
                 <span class="text-sm">Posts</span>
             </Link>
+            <Link :class="$page.url === '/dashboard/users' ? 'text-primary font-medium' : '' "
+                  class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/users">
+                <CogWheel class="w-auto h-5"/>
+                <span class="text-sm">Users</span>
+            </Link>
             <Link :class="$page.url.startsWith('/dashboard/profile') ? 'text-primary font-medium' : '' "
                   class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/profile">
-                <CogWheel class="w-auto h-5"/>
+                <Person class="w-auto h-5"/>
                 <span class="text-sm">Profile</span>
             </Link>
             <Link as="button" class="flex items-center space-x-3 hover:text-primary/80" href="/logout" method="POST">

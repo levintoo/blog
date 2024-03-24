@@ -3,25 +3,19 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $stats = collect([
-            'active' => Post::count(),
-            'trashed' => Post::onlyTrashed()->count(),
-            'total' => Post::withTrashed()->count(),
-            'users' => User::withTrashed()->count(),
-        ]);
-
-        return inertia('Dashboard/Dashboard', compact('stats'));
+        $users = User::withTrashed()->Paginate();
+        return inertia('Dashboard/Users/Users', compact('users'));
     }
 
     /**
@@ -43,7 +37,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(User $user)
     {
         //
     }
@@ -51,7 +45,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
         //
     }
@@ -59,7 +53,7 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -67,8 +61,20 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(String $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        if($user->id === Auth::id() || $user->id == config('app.allowed_email')) {
+            abort(403);
+        }
+
+        $user->delete();
+    }
+
+    public function restore(String $id)
+    {
+        $user = User::onlyTrashed()->findOrFail($id);
+        $user->restore();
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\UserController as AdminUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Dashboard\PostController as AdminPostController;;
@@ -48,7 +49,26 @@ Route::middleware(['auth', 'verified'])
 
                 Route::patch('/edit/{slug}', 'update')->name('update');
 
-                Route::delete('/{slug}/delete', 'destroy')->name('destroy');
+                Route::delete('/{slug}/delete/soft', 'softDelete')->name('destroy.soft');
+
+                Route::delete('/{slug}/delete/force', 'destroy')->name('destroy.force');
+
+                Route::patch('/{slug}/restore', 'restore')->name('restore');
+            });
+
+        Route::prefix('users')
+
+            ->name('users.')
+
+            ->controller(AdminUserController::class)
+
+            ->group(function () {
+
+                Route::get('/', 'index')->name('index');
+
+                Route::delete('/{id}/delete', 'destroy')->name('destroy');
+
+                Route::patch('/{id}/restore', 'restore')->name('restore');
             });
 });
 

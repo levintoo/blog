@@ -16,7 +16,15 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::query()->latest()->paginate();
+        $posts = Post::query()->withTrashed()->latest()->paginate()->through(fn($post) => [
+            'title' => $post->title,
+            'image' => $post->image,
+            'id' => $post->id,
+            'slug' => $post->slug,
+            'created' => $post->created_at ? $post->created_at->format('d/m/Y H:i T') : null,
+            'updated' => $post->updated_at ? $post->updated_at->format('d/m/Y H:i T') : null,
+            'trashed' => $post->deleted_at ? $post->deleted_at->format('d/m/Y H:i T') : null,
+        ]);
         return inertia('Dashboard/Posts/Posts', compact('posts'));
     }
 
@@ -76,12 +84,26 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function softDelete(String $id)
+    {
+        $post = Post::findorfail($id);
+
+        $post->delete();
+    }
+
+    public function restore(String $id)
+    {
+        $post = Post::onlyTrashed()->findorfail($id);
+
+        $post->restore();
+    }
+
     public function destroy(String $id)
     {
         $post = Post::findorfail($id);
 
         Storage::disk('public_uploads')->delete($post->image);
 
-        $post->delete();
+        $post->forcedelete();
     }
 }

@@ -1,10 +1,31 @@
 <script setup>
-import {Link} from "@inertiajs/vue3";
+import {Head, Link} from "@inertiajs/vue3";
 import AppLayout from "@/Layouts/AppLayout.vue";
 </script>
 
 <template>
     <AppLayout>
+        <Head>
+            <title>Privacy Policy</title>
+
+            <!-- Primary Meta Tags -->
+            <meta name="title" content="Privacy Policy">
+            <meta name="description"
+                  content="Read about our commitment to your privacy. This policy clarifies data collection practices on levintoo.com for a transparent experience.">
+
+            <!-- Open Graph / Facebook -->
+            <meta property="og:title" content="Privacy Policy">
+            <meta property="og:description"
+                  content="Read about our commitment to your privacy. This policy clarifies data collection practices on levintoo.com for a transparent experience.">
+            <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
+            <!-- Twitter -->
+
+            <meta property="twitter:title" content="Privacy Policy">
+            <meta property="twitter:description"
+                  content="Read about our commitment to your privacy. This policy clarifies data collection practices on levintoo.com for a transparent experience.">
+            <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+        </Head>
+
         <template #breadcrumbs>
             privacy policy
         </template>

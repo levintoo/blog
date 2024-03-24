@@ -30,4 +30,11 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+
+    'ga4' => [
+        'measurementId' => env('GA_MEASUREMENT_ID'),
+    ],
+
+    'beam.data-token' => env('BEAM_DATA_TOKEN'),
+
 ];

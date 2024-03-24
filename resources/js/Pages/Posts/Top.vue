@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import {Link} from "@inertiajs/vue3";
+import {Head, Link} from "@inertiajs/vue3";
 
 defineProps({
     posts: {
@@ -13,16 +13,37 @@ defineProps({
 
 <template>
     <AppLayout>
+        <Head>
+            <title>Our Top Picks: Top Posts</title>
+
+            <!-- Primary Meta Tags -->
+            <meta name="title" content="Our Top Picks: Top Posts">
+            <meta name="description"
+                  content="Discover our most popular content! This page showcases the top posts, covering a range of topics within our focus.">
+
+            <!-- Open Graph / Facebook -->
+            <meta property="og:title" content="Our Top Picks: Top Posts">
+            <meta property="og:description"
+                  content="Discover our most popular content! This page showcases the top posts, covering a range of topics within our focus.">
+            <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
+            <!-- Twitter -->
+
+            <meta property="twitter:title" content="Our Top Picks: Top Posts">
+            <meta property="twitter:description"
+                  content="Discover our most popular content! This page showcases the top posts, covering a range of topics within our focus.">
+            <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+        </Head>
+
         <template #breadcrumbs>
             top posts
         </template>
 
         <div class="w-full py-5 space-y-10">
-            <h2 class="text-2xl font-semibold text-center text-gray-800">
+            <h1 class="text-2xl font-semibold text-center text-gray-800">
                 Top posts
-            </h2>
+            </h1>
             <div class="grid grid-cols-1 px-4 mx-auto sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 gap-y-12">
-                <article class="space-y-3 w-[95%] lg:w-[90%] mx-auto" v-for="post in posts.data">
+                <article v-if="posts?.data?.length > 0" class="space-y-3 w-[95%] lg:w-[90%] mx-auto" v-for="post in posts.data">
                     <Link :href="`/${post.slug}`" class="font-light text-sm bg-white">
                         <img class="mx-auto transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg shadow-md"
                              :src="`/uploads/${post.image}`" :alt="post.title" />
@@ -46,6 +67,7 @@ defineProps({
                         </div>
                     </div>
                 </article>
+                <span v-else class="text-gray-500">Looks like there are no articles yet</span>
             </div>
         </div>
     </AppLayout>

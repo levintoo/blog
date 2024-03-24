@@ -1,5 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
+import {Head} from "@inertiajs/vue3";
 
 defineProps({
     posts: {
@@ -20,14 +21,35 @@ const contact = (means) => {
 
 <template>
     <AppLayout>
+        <Head>
+            <title>About Levin and levintoo.com</title>
+
+            <!-- Primary Meta Tags -->
+            <meta name="title" content="About Levin and levintoo.com">
+            <meta name="description"
+                  content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">
+
+            <!-- Open Graph / Facebook -->
+            <meta property="og:title" content="About Levin and levintoo.com">
+            <meta property="og:description"
+                  content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">
+            <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
+
+            <!-- Twitter -->
+            <meta property="twitter:title" content="About Levin and the blog levintoo.com">
+            <meta property="twitter:description"
+                  content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">
+            <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+        </Head>
+
         <template #breadcrumbs>
             about
         </template>
 
         <div class="w-full py-5 space-y-10">
-            <h2 class="text-2xl font-semibold text-center text-gray-800">
+            <h1 class="text-2xl font-semibold text-center text-gray-800">
                 About levintoo
-            </h2>
+            </h1>
             <div>
                 <div class="max-w-7xl mx-auto">
                     <div class="px-2 lg:px-0 mx-auto prose text-lg leading-loose">

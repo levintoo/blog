@@ -22,7 +22,7 @@ const isOpen = ref(false)
 
 <template>
     <Head>
-        <title>Master Coding with Expert Tips</title>
+        <title>Level Up Your Programming Skills</title>
 
         <!-- Primary Meta Tags -->
         <meta name="title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
@@ -30,20 +30,17 @@ const isOpen = ref(false)
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://levintoo.com/">
         <meta property="og:title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
         <meta property="og:description"
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
-        <meta property="og:image" content="https://levintoo.com/img/og-image.jpg">
+            <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
 
         <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://levintoo.com/">
         <meta property="twitter:title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
         <meta property="twitter:description"
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
-        <meta property="twitter:image" content="https://levintoo.com/img/og-image.jpg">
+            <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
     </Head>
 
     <AppLayout>
@@ -57,7 +54,7 @@ const isOpen = ref(false)
                 </h1>
                 <p class="text-center text-gray-800 mx-auto lg:max-w-[83%]">
                     In the world of programming the digital landscape is vast and continuously evolving, there's a lot to explore, and things
-                    can change fast. From essential tips to advanced techniques join me as we learn, share, and grow together.
+                    can change fast. From essential tips to advanced techniques, ready to level up ? join me as we learn, share, and grow together.
                 </p>
                 <Link href="/posts/latest"
                       class="mx-auto bg-primary text-white font-sm font-medium rounded px-6 py-3 hover:shadow-2xl shadow-primary">
@@ -71,7 +68,7 @@ const isOpen = ref(false)
                 Trending articles
             </h2>
             <div class="grid grid-cols-1 px-4 mx-auto sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 gap-y-12">
-                <article class="space-y-3" v-for="post in topPosts">
+                <article v-if="topPosts?.length > 0" class="space-y-3" v-for="post in topPosts">
                     <Link :href="`/${post.slug}`" class="font-light text-sm bg-white">
                         <img class="mx-auto transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg"
                              :src="`/uploads/${post.image}`" :alt="post.title" />
@@ -93,6 +90,7 @@ const isOpen = ref(false)
                         </div>
                     </div>
                 </article>
+                <span v-else class="text-gray-500">Looks like there are no articles yet</span>
             </div>
         </div>
 
@@ -101,7 +99,7 @@ const isOpen = ref(false)
                 Latest articles
             </h2>
             <div class="grid grid-cols-1 px-4 mx-auto sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 gap-y-12">
-                <article class="space-y-3" v-for="post in latestPosts">
+                <article v-if="latestPosts?.length > 0" class="space-y-3" v-for="post in latestPosts">
                     <Link :href="`/${post.slug}`" class="font-light text-sm bg-white">
                         <img class="mx-auto transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg"
                              :src="`/uploads/${post.image}`" :alt="post.title" />
@@ -123,6 +121,7 @@ const isOpen = ref(false)
                         </div>
                     </div>
                 </article>
+                <span v-else class="text-gray-500">Looks like there are no articles yet</span>
             </div>
         </div>
     </AppLayout>

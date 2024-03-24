@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('tag');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

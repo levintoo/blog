@@ -4,21 +4,25 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap text-left lg:text-left">
                     <div class="lg:w-2/5 px-4 space-y-4">
-                        <h4 class="text-3xl font-semibold text-gray-700">Let's keep in touch!</h4>
-                        <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
+                        <p class="text-3xl font-semibold text-gray-700">Let's keep in touch!</p>
+                        <p class="text-lg mt-0 mb-2 text-blueGray-600">
                             Find me on any of these platforms.
-                        </h5>
+                        </p>
                         <div class="mt-6 lg:mb-0 mb-6 flex">
                             <a href="https://twitter.com/_m0ssad" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <span class="sr-only">twitter</span>
                                 <Twitter />
                             </a>
                             <a target="_blank" href="https://www.linkedin.com/in/levin-kipkemboi" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <span class="sr-only">linkedin</span>
                                 <Linkedin />
                             </a>
-                            <a target="_blank" href="https://https:instagram.com" class="flex items-center justify-center bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a href="https://instagram.com/too_levin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <span class="sr-only">instagram</span>
                                 <Instagram />
                             </a>
                             <a target="_blank" href="https://github.com/levintoo" class="flex items-center justify-center bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <span class="sr-only">github</span>
                                 <Github />
                             </a>
                         </div>
@@ -42,7 +46,7 @@
                             </div>
                             <div class="w-full lg:w-1/3 lg:px-4 ml-auto space-y-2.5">
                                 <span class="block text-gray-800 font-semibold">Navigation</span>
-                                <ul class="space-y-2">
+                                <ul class="space-y-3">
                                     <li>
                                         <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/">Home</Link>
                                     </li>
@@ -59,7 +63,7 @@
                             </div>
                             <div class="w-full lg:w-1/3 lg:px-4 ml-auto space-y-2.5">
                                 <span class="block text-gray-800 font-semibold">Others</span>
-                                <ul class="space-y-2">
+                                <ul class="space-y-3">
                                     <li>
                                         <Link class="underline text-blueGray-600 hover:text-gray-800 block text-sm" href="/terms-of-service">Terms of Service</Link>
                                     </li>
