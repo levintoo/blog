@@ -34,7 +34,4 @@ return [
     'ga4' => [
         'measurementId' => env('GA_MEASUREMENT_ID'),
     ],
-
-    'beam.data-token' => env('BEAM_DATA_TOKEN'),
-
 ];
