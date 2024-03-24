@@ -12,15 +12,33 @@
         <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#fe5a35">
         <link rel="shortcut icon" href="/favicon.ico">
 
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://levintoo.com/">
+
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://levintoo.com/">
+
         <meta name="theme-color" content="#ffffff">
         <meta name="color-scheme" content="light">
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.ga4.measurementId') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ config('services.ga4.measurementId') }}');
+        </script>
+
+        <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="{{ config('services.beam.data-token') }}" async></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
         @inertiaHead
 
         <!-- Scripts -->
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
-
-        <title>Levin</title>
     </head>
     <body class="poppins-regular">
         @inertia
