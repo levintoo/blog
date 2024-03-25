@@ -10,12 +10,8 @@ defineProps({
     }
 })
 
-const contact = (means) => {
-    if (means === 'email') {
-        window.open(`mailto:mymail`, "_blank");
-    } else if (means === 'whatsapp') {
-        window.open(`https://wa.me/super-secretnumber}`, "_blank");
-    }
+const email = () => {
+    window.open(`mailto:tooklevin@gmail`, "_blank");
 }
 </script>
 
@@ -84,17 +80,18 @@ const contact = (means) => {
                                         Twitter
                                     </a>
                                 <button
-                                    @click="contact('email')"
+                                    @click="email"
                                     class="text-[16px] bg-primary text-white px-10 py-4 rounded hover:shadow-lg">
                                     Email me
                                 </button>
-                                <button @click="contact('whatsapp')" class="text-[16px] bg-[#d9d9d9] px-10 py-4 rounded hover:shadow-lg">
-                                    Whatsapp
-                                </button>
+                                    <a href="https://www.linkedin.com/in/levin-kipkemboi/"
+                                       target="_blank"
+                                       class="text-[16px] text-center no-underline bg-accent px-10 py-4 rounded hover:shadow-lg">
+                                        Linkedin
+                                    </a>
                             </div>
                         </div>
                         </section>
-
                     </div>
                 </div>
             </div>
