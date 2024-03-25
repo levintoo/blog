@@ -16,20 +16,20 @@ Route::middleware(['auth', 'verified'])
 
     ->group(function () {
 
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::controller(ProfileController::class)
+        Route::controller(ProfileController::class)
 
-        ->name('profile.')
+            ->name('profile.')
 
-        ->group(function () {
+            ->group(function () {
 
-        Route::get('/profile', 'edit')->name('edit');
+            Route::get('/profile', 'edit')->name('edit');
 
-        Route::patch('/profile', 'update')->name('update');
+            Route::patch('/profile', 'update')->name('update');
 
-        Route::delete('/profile', 'destroy')->name('destroy');
-    });
+            Route::delete('/profile', 'destroy')->name('destroy');
+        });
 
         Route::prefix('posts')
 
@@ -66,7 +66,13 @@ Route::middleware(['auth', 'verified'])
 
                 Route::get('/', 'index')->name('index');
 
-                Route::delete('/{id}/delete', 'destroy')->name('destroy');
+                Route::get('/create', 'create')->name('create');
+
+                Route::post('/create', 'store')->name('store');
+
+                Route::delete('/{id}/delete/soft', 'softDestroy')->name('destroy.soft');
+
+                Route::delete('/{id}/delete/force', 'destroy')->name('destroy');
 
                 Route::patch('/{id}/restore', 'restore')->name('restore');
             });

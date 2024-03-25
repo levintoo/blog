@@ -88,7 +88,7 @@ defineProps({
                                                             Edit
                                                         </Link>
                                                         <Link method="DELETE" as="button" class="underline hover:text-red-400" :href="`/dashboard/posts/${post.id}/delete/soft`">
-                                                           Soft Delte
+                                                           Soft Delete
                                                         </Link>
                                                     </template>
                                                     <Link v-else method="PATCH" as="button" class="underline" :href="`/dashboard/posts/${post.id}/restore`">
