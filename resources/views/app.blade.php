@@ -28,8 +28,7 @@
             gtag('js', new Date());
             gtag('config', '{{ config('services.ga4.measurementId') }}');
         </script>
-
-        <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="f2e6a6bf-3f3f-4cac-9977-927d8c6eb569" async></script>
+        <script async src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="f2e6a6bf-3f3f-4cac-9977-927d8c6eb569"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

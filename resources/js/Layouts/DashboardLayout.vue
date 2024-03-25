@@ -3,7 +3,6 @@ import {ref} from "vue";
 import {Link} from "@inertiajs/vue3";
 import Hamburger from "@/Components/Icons/Hamburger.vue";
 import SidebarItems from "@/Components/Shared/SidebarItems.vue";
-import Footer from "@/Components/Shared/Footer.vue";
 
 const isOpen = ref(false)
 

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Inertia\Inertia;
 
-
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
@@ -23,17 +22,6 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        $exceptions->respond(function (Response $response, Throwable $exception, Request $request) {
-            if (! app()->environment(['local', 'testing']) && in_array($response->status(), [500, 503, 404, 403])) {
-                return Inertia::render('Error', ['status' => $response->status()])
-                    ->toResponse($request)
-                    ->setStatusCode($response->status());
-            } elseif ($response->status() === 419) {
-                return back()->with([
-                    'message' => 'The page expired, please try again.',
-                ]);
-            }
-
-            return $response;
-        });
-    })->create();
+        //
+    })
+    ->create();
