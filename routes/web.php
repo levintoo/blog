@@ -24,12 +24,12 @@ Route::middleware(['auth', 'verified'])
 
             ->group(function () {
 
-            Route::get('/profile', 'edit')->name('edit');
+                Route::get('/profile', 'edit')->name('edit');
 
-            Route::patch('/profile', 'update')->name('update');
+                Route::patch('/profile', 'update')->name('update');
 
-            Route::delete('/profile', 'destroy')->name('destroy');
-        });
+                Route::delete('/profile', 'destroy')->name('destroy');
+            });
 
         Route::prefix('posts')
 
@@ -76,7 +76,7 @@ Route::middleware(['auth', 'verified'])
 
                 Route::patch('/{id}/restore', 'restore')->name('restore');
             });
-});
+    });
 
 Route::get('about', function () {
     return inertia('About');

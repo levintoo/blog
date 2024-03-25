@@ -31,9 +31,9 @@ function handleSubmit() {
 
     <DashboardLayout>
         <template #breadcrumbs>
-            <span class="text-primary">/</span>
-            posts
-            <span class="text-primary">/</span>
+            <span class="text-primary"> / </span>
+            <Link href="/dashboard/posts" >posts</Link>
+            <span class="text-primary"> / </span>
             create
         </template>
 
