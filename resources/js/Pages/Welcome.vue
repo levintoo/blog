@@ -77,7 +77,7 @@ const isOpen = ref(false)
                         <Link :href="`/${post.slug}`" class="font-medium text-sm text-blue-700 underline hover:text-blue-900">
                             {{ post.title }}
                         </Link>
-                        <p class="text-sm text-gray-900">
+                        <p :title="post.description" class="text-sm text-gray-900 line-clamp-3">
                             {{ post.description }}
                         </p>
                         <p class="text-gray-600 text-sm font-light">Posted {{ post.created}}
@@ -108,7 +108,7 @@ const isOpen = ref(false)
                         <Link :href="`/${post.slug}`" class="font-medium text-sm text-blue-700 underline hover:text-blue-900">
                             {{ post.title }}
                         </Link>
-                        <p class="text-sm text-gray-900">
+                        <p :title="post.description" class="text-sm text-gray-900 line-clamp-3 leading-6">
                             {{ post.description }}
                         </p>
                         <p class="text-gray-600 text-sm font-light">Posted {{ post.created}}

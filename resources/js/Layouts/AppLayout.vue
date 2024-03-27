@@ -21,10 +21,12 @@ const toggleSidebar = () => {
                 <div class="w-full py-4 sm:px-5">
 
                     <div class="flex items-center justify-between px-5 py-1">
-                        <h3 class="tracking-wide flex space-x-2">
+                        <h3 class="tracking-wide flex space-x-1.5">
                             <Link href="/">levintoo.com</Link>
                             <span class="text-primary"> / </span>
-                            <slot name="breadcrumbs">home</slot>
+                            <slot name="breadcrumbs">
+                                <span>Home</span>
+                            </slot>
                         </h3>
                         <button class="flex" @click="toggleSidebar">
                             <Hamburger class="text-gray h-8 w-auto rounded-md border-2 border-primary"/>
