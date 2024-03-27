@@ -36,7 +36,8 @@ defineProps({
 
     <AppLayout>
         <template #breadcrumbs>
-            post
+            <span class="hidden lg:flex">{{ post.title }}</span>
+            <span class="lg:hidden">post</span>
         </template>
 
         <div class="py-12">

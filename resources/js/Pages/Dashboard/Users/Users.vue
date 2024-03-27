@@ -1,8 +1,14 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import {Head, Link, router} from '@inertiajs/vue3';
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import PrimaryButton from "@/Components/Reused/PrimaryButton.vue";
 import Pagination from "@/Components/Reused/Pagination.vue";
+import {ref} from "vue";
+import Dots from "@/Components/Icons/Dots.vue";
+import Edit from "@/Components/Icons/Edit.vue";
+import TrashCan from "@/Components/Icons/TrashCan.vue";
+import Restore from "@/Components/Icons/Restore.vue";
+import Preview from "@/Components/Icons/Preview.vue";
 
 defineProps({
     users: {
@@ -11,6 +17,24 @@ defineProps({
         required: true,
     }
 })
+
+const openOption = ref(0)
+
+const toggleOpenOption = (id = 0) => {
+    if(openOption.value === id) {
+        openOption.value = 0
+    } else {
+        openOption.value = id
+    }
+}
+
+const deleteUser = (id) => {
+    if(!confirm('Are you sure you want to continue, this is a destructive action')) return
+    router.delete(`/dashboard/users/${id}/delete/force`, {
+        preserveScroll: true,
+        preserveState: true,
+    })
+}
 </script>
 
 <template>
@@ -78,30 +102,36 @@ defineProps({
                                         <td :title="user.name" class="py-4 px-6 text-sm font-medium text-gray-900">
                                             {{ user.created }}
                                         </td>
-                                        <td :title="user.name" class="py-4 px-6 text-sm font-medium text-gray-900">
+                                        <td :title="user.name" class="py-4 px-6 text-sm font-medium text-red-500">
                                             {{ user.trashed ?? '-' }}
                                         </td>
-                                        <td :title="user.name" class="py-4 px-6 text-sm font-medium text-gray-900 space-x-3">
-                                            <template v-if="$page.props.auth.user.email !== user.email ">
-                                                <template v-if="!user.trashed">
-                                                    <Link method="DELETE" as="button"
-                                                          class="underline hover:text-orange-400"
-                                                          :href="`/dashboard/users/${user.id}/delete/soft`">
-                                                        Soft Delete
-                                                    </Link>
-                                                </template>
-                                                <Link title="Restore soft deleted user" v-else method="PATCH"
-                                                      as="button" class="underline hover:text-green-600"
-                                                      :href="`/dashboard/users/${user.id}/restore`">
-                                                    Restore
-                                                </Link>
-                                                <Link title="Remove permanently" method="DELETE" as="button"
-                                                      class="underline text-red-500 hover:text-red-400"
-                                                      :href="`/dashboard/users/${user.id}/delete/force`">
-                                                    Delete
-                                                </Link>
-                                            </template>
-                                            <span title="Actions available for logged in account" v-else>-</span>
+                                        <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap space-x-3">
+                                            <div class="relative inline-block ">
+                                                <!-- Dropdown toggle button -->
+                                                <button @click="toggleOpenOption(user.id)" class="relative z-10 block p-2 text-gray-700">
+                                                    <Dots />
+                                                </button>
+
+                                                <!-- Dropdown menu -->
+                                                <div v-show="openOption === user.id"
+                                                     @click="openOption = 0"
+                                                     class="flex justify-around space-x-3 px-2 absolute right-10 top-0 z-20 py-2 mt-0 origin-top-right bg-white rounded-md shadow"
+                                                >
+                                                    <template v-if="!user.trashed">
+                                                        <Link method="DELETE" as="button" class="underline text-gray-600 hover:text-orange-400" :href="`/dashboard/users/${user.id}/delete/soft`">
+                                                            <TrashCan class="h-5 w-auto"/>
+                                                        </Link>
+                                                    </template>
+                                                    <template v-else>
+                                                        <Link method="PATCH" as="button" class="text-gray-600 underline" :href="`/dashboard/users/${user.id}/restore`">
+                                                            <Restore class="h-5 w-auto"/>
+                                                        </Link>
+                                                        <button @click="deleteUser(user.id)" class="underline text-gray-600 hover:text-red-400">
+                                                            <TrashCan class="h-5 w-auto"/>
+                                                        </button>
+                                                    </template>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     </tbody>

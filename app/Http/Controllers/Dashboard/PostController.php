@@ -16,15 +16,27 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::query()->withTrashed()->latest()->paginate()->through(fn($post) => [
-            'title' => $post->title,
-            'image' => $post->image,
-            'id' => $post->id,
-            'slug' => $post->slug,
-            'created' => $post->created_at ? $post->created_at->format('d/m/Y H:i T') : null,
-            'updated' => $post->updated_at ? $post->updated_at->format('d/m/Y H:i T') : null,
-            'trashed' => $post->deleted_at ? $post->deleted_at->format('d/m/Y H:i T') : null,
-        ]);
+        $posts = Post::query()
+
+            ->select(['title', 'description', 'image', 'id', 'slug', 'created_at', 'updated_at', 'deleted_at'])
+
+            ->withTrashed()
+
+            ->latest()
+
+            ->paginate()
+
+            ->through(fn($post) => [
+                'title' => $post->title,
+                'description' => $post->description,
+                'image' => $post->image,
+                'id' => $post->id,
+                'slug' => $post->slug,
+                'created' => $post->created_at ? $post->created_at->format('d/m/Y H:i T') : null,
+                'updated' => $post->updated_at ? $post->updated_at->format('d/m/Y H:i T') : null,
+                'trashed' => $post->deleted_at ? $post->deleted_at->format('d/m/Y H:i T') : null,
+            ]);
+
         return inertia('Dashboard/Posts/Posts', compact('posts'));
     }
 
