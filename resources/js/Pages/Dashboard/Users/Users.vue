@@ -5,10 +5,8 @@ import PrimaryButton from "@/Components/Reused/PrimaryButton.vue";
 import Pagination from "@/Components/Reused/Pagination.vue";
 import {ref} from "vue";
 import Dots from "@/Components/Icons/Dots.vue";
-import Edit from "@/Components/Icons/Edit.vue";
 import TrashCan from "@/Components/Icons/TrashCan.vue";
 import Restore from "@/Components/Icons/Restore.vue";
-import Preview from "@/Components/Icons/Preview.vue";
 
 defineProps({
     users: {

@@ -10,7 +10,11 @@ import TextAreaInput from "@/Components/Reused/TextAreaInput.vue";
 const page = usePage()
 
 const props = defineProps({
-    post: Object,
+    post: {
+        type: Object,
+        required: true,
+        default: {}
+    },
 })
 
 const form = useForm({

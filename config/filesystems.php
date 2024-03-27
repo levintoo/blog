@@ -29,6 +29,11 @@ return [
     */
 
     'disks' => [
+        'real_public' => [
+            'driver' => 'local',
+            'root'   => public_path(),
+        ],
+
         'public_uploads' => [
             'driver' => 'local',
             'root'   => public_path() . '/uploads',
