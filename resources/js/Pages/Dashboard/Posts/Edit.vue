@@ -20,10 +20,11 @@ const form = useForm({
     description: props.post.description,
     body: props.post.body,
     tag: props.post.tag,
+    image: '',
 })
 
 function handleSubmit() {
-    form.patch('/dashboard/posts/edit/' + props.post.id, {
+    form.post('/dashboard/posts/edit/' + props.post.id, {
         preserveScroll: true,
         onSuccess: () => {
             form.reset()
@@ -100,6 +101,22 @@ function handleSubmit() {
                         </div>
 
                         <div class="mt-6">
+                            <InputLabel for="image" value="Image"/>
+
+                            <TextInput
+                                id="image"
+                                ref="file"
+                                @input="form.image = $event.target.files[0]"
+                                autocomplete="image"
+                                class="mt-1 block w-full"
+                                type="file"
+                                model-value=""
+                            />
+
+                            <InputError :message="form.errors.image" class="mt-2"/>
+                        </div>
+
+                        <div class="mt-6">
                             <InputLabel for="description" value="Description"/>
 
                             <TextAreaInput
@@ -128,6 +145,20 @@ function handleSubmit() {
 
                             <InputError :message="form.errors.description" class="mt-2"/>
                         </div>
+
+                        <InputError v-if="form.errors.id" message="some required parameters are missing" class="mt-2"/>
+
+                        <TextInput
+                            class="hidden"
+                            aria-disabled="true"
+                            aria-hidden="true"
+                            type="text"
+                            v-model="form.id"
+                        />
+
+                        <progress v-if="form.progress" :value="form.progress.percentage" max="100">
+                            {{ form.progress.percentage }}%
+                        </progress>
 
                         <div class="flex items-center gap-4">
                             <PrimaryButton :disabled="form.processing">Update</PrimaryButton>

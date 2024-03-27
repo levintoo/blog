@@ -118,7 +118,7 @@ function handleSubmit() {
                                 autocomplete="image"
                                 class="mt-1 block w-full"
                                 type="file"
-                            />
+                             model-value=""/>
 
                             <InputError :message="form.errors.image" class="mt-2"/>
                         </div>

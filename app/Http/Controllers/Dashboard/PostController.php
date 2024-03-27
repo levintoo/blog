@@ -84,11 +84,24 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, String $id)
     {
-        $post = Post::findorfail($id);
+        $post = Post::findOrFail($id);
+
+        $oldImage = $post->image;
 
         $validated = $request->validated();
 
+        if ($request->hasFile('image')) {
+            $filePath = $validated['image']->store('posts/images', ['disk' => 'public_uploads']);
+            $validated['image'] = $filePath;
+        }
+
         $post->update($validated);
+
+        if ($request->hasFile('image') && $post->wasChanged('image')) {
+            if ($oldImage) {
+                Storage::disk('public_uploads')->delete($oldImage);
+            }
+        }
 
         return redirect()->route('posts.index');
     }
@@ -112,7 +125,7 @@ class PostController extends Controller
 
     public function destroy(String $id)
     {
-        $post = Post::findorfail($id);
+        $post = Post::onlyTrashed()->findorfail($id);
 
         Storage::disk('public_uploads')->delete($post->image);
 

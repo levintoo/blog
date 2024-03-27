@@ -47,7 +47,7 @@ Route::middleware(['auth', 'verified'])
 
                 Route::get('/edit/{slug}', 'edit')->name('edit');
 
-                Route::patch('/edit/{slug}', 'update')->name('update');
+                Route::post('/edit/{slug}', 'update')->name('update');
 
                 Route::delete('/{slug}/delete/soft', 'softDelete')->name('destroy.soft');
 

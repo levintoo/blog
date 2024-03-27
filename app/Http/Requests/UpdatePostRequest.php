@@ -17,6 +17,22 @@ class UpdatePostRequest extends FormRequest
     }
 
     /**
+     * @return void
+     */
+    protected function prepareForValidation(): void
+    {
+        parent::prepareForValidation();
+
+        $post = Post::where('slug', $this->input('slug'))->first();
+
+        if ($post) {
+            $this->merge([
+                'id' => $post->id,
+            ]);
+        }
+    }
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
@@ -24,12 +40,12 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => ['required'],
             'title' => ['nullable','max:255'],
             'tag' => ['nullable','max:255'],
-            'slug' => ['nullable', Rule::unique('posts', 'slug')->ignore($this->id),'max:255'],
+            'slug' => ['nullable','max:255', Rule::unique('posts')->ignore($this->id)],
             'description' => ['nullable','max:2550'],
             'body' => ['nullable'],
+            'image' => ['nullable','mimes:svg,png,webp,jpg,jpeg'],
         ];
     }
 }
