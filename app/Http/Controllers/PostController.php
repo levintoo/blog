@@ -6,7 +6,6 @@ use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use Illuminate\Mail\Markdown;
-use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -15,13 +14,45 @@ class PostController extends Controller
      */
     public function top()
     {
-        $posts = Post::query()->select('slug', 'description', 'tag', 'created_at', 'title', 'image')->inRandomOrder()->paginate()->through(fn($post) => ['title' => $post->title, 'image' => $post->image, 'slug' => $post->slug, 'description' => $post->description, 'tag' => $post->tag, 'created' => $post->created_at->diffForHumans()]);
+        $posts = Post::query()
+
+            ->select('slug', 'description', 'tag', 'created_at', 'title', 'image')
+
+            ->inRandomOrder()
+
+            ->paginate()
+
+            ->through(fn ($post) => [
+                'title' => $post->title,
+                'image' => $post->image,
+                'slug' => $post->slug,
+                'description' => $post->description,
+                'tag' => $post->tag,
+                'created' => $post->created_at->diffForHumans()
+            ]);
+
         return inertia('Posts/Top', compact('posts'));
     }
 
     public function latest()
     {
-        $posts = Post::query()->select('slug', 'description', 'tag', 'created_at', 'title', 'image')->latest()->paginate()->through(fn($post) => ['title' => $post->title, 'image' => $post->image, 'slug' => $post->slug, 'description' => $post->description, 'tag' => $post->tag, 'created' => $post->created_at->diffForHumans()]);
+        $posts = Post::query()
+
+            ->select('slug', 'description', 'tag', 'created_at', 'title', 'image')
+
+            ->latest()
+
+            ->paginate()
+
+            ->through(fn($post) => [
+                'title' => $post->title,
+                'image' => $post->image,
+                'slug' => $post->slug,
+                'description' => $post->description,
+                'tag' => $post->tag,
+                'created' => $post->created_at->diffForHumans()
+            ]);
+
         return inertia('Posts/Latest', compact('posts'));
     }
 
@@ -44,7 +75,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $slug)
+    public function show(String $slug)
     {
         $post = Post::where('slug', $slug)->select('body', 'title', 'description','image')->firstorfail();
 

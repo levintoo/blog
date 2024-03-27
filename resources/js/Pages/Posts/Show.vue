@@ -36,7 +36,7 @@ defineProps({
 
     <AppLayout>
         <template #breadcrumbs>
-            {{ post.title }}
+            post
         </template>
 
         <div class="py-12">

@@ -3,6 +3,7 @@ import { Head, Link } from '@inertiajs/vue3';
 import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 import PrimaryButton from "@/Components/Reused/PrimaryButton.vue";
 import TrashCan from "@/Components/Icons/TrashCan.vue";
+import Pagination from "@/Components/Reused/Pagination.vue";
 
 defineProps({
     posts: {
@@ -104,8 +105,8 @@ defineProps({
                                     </div>
                                 </div>
                             </div>
-
                 </div>
+                    <Pagination class="py-3" v-if="posts.links" :links="posts.links" />
             </div>
         </div>
     </DashboardLayout>

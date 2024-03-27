@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import {Head, Link} from "@inertiajs/vue3";
+import Pagination from "@/Components/Reused/Pagination.vue";
 
 defineProps({
     posts: {
@@ -42,7 +43,9 @@ defineProps({
             <h1 class="text-2xl font-semibold text-center text-gray-800">
                 Latest articles
             </h1>
+
             <div class="grid grid-cols-1 px-4 mx-auto sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 gap-y-12">
+
                 <article v-if="posts?.data?.length > 0" class="space-y-3 w-[95%] lg:w-[90%] mx-auto" v-for="post in posts.data">
                     <Link :href="`/${post.slug}`" class="font-light text-sm bg-white">
                         <img class="mx-auto transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg shadow-md"
@@ -50,14 +53,13 @@ defineProps({
                     </Link>
                     <div class="space-y-3 lg:px-1">
                         <Link :href="`/${post.slug}`" class="font-medium text-sm text-indigo-700 underline hover:text-blue-900">
-                            {{
-                                post.title
-                            }}
+                            {{ post.title }}
                         </Link>
                         <p class="text-sm text-gray-900">
                             {{ post.description }}
                         </p>
-                        <p class="text-gray-600 text-sm font-light">Posted {{ post.created }}
+                        <p class="text-gray-600 text-sm font-light">
+                            Posted {{ post.created }}
                         </p>
                         <div class="space-x-2 space-y-2">
                             <button
@@ -67,8 +69,11 @@ defineProps({
                         </div>
                     </div>
                 </article>
+
                 <span v-else class="text-gray-500">Looks like there are no articles yet</span>
             </div>
+
+            <Pagination class="px-3 lg:px-9" v-if="posts.links" :links="posts.links" />
         </div>
     </AppLayout>
 </template>

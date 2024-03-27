@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
 import {Head, Link} from "@inertiajs/vue3";
+import Pagination from "@/Components/Reused/Pagination.vue";
 
 defineProps({
     posts: {
@@ -69,6 +70,8 @@ defineProps({
                 </article>
                 <span v-else class="text-gray-500">Looks like there are no articles yet</span>
             </div>
+
+            <Pagination class="px-3 lg:px-9" v-if="posts.links" :links="posts.links" />
         </div>
     </AppLayout>
 </template>

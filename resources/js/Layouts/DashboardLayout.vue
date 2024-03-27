@@ -17,10 +17,10 @@ const toggleSidebar = () => {
 
             <div class="relative lg:flex max-w-screen overflow-x-clip">
                 <!-- left sidebar -->
-                <div :class="isOpen ? 'translate-x-0 border shadow-lg' : '-translate-x-full lg:-translate-x-0'" class="absolute lg:static transition-all ease-in-out bg-[#f5f7f9]
+                <nav :class="isOpen ? 'translate-x-0 border shadow-lg' : '-translate-x-full lg:-translate-x-0'" class="absolute lg:static transition-all ease-in-out bg-[#f5f7f9]
             lg:min-h-screen w-[80%] sm:w-[60%] md:w-[50%] lg:w-[30%] lg:pl-1 pr-5 text-gray-800 space-x-4 space-y-6 border-r">
                     <sidebar-items :is-dashboard="true" @toggle-sidebar="toggleSidebar"/>
-                </div>
+                </nav>
 
                 <!-- main content -->
                 <div class="w-full py-4 sm:px-5">
