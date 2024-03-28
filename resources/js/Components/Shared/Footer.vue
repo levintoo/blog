@@ -9,19 +9,19 @@
                             Find me on any of these platforms.
                         </p>
                         <div class="mt-6 lg:mb-0 mb-6 flex">
-                            <a href="https://twitter.com/tooklevin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/tooklevin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">twitter</span>
                                 <Twitter />
                             </a>
-                            <a target="_blank" href="https://www.linkedin.com/in/levin-kipkemboi" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/levin-kipkemboi" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">linkedin</span>
                                 <Linkedin />
                             </a>
-                            <a href="https://instagram.com/too_levin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://instagram.com/too_levin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">instagram</span>
                                 <Instagram />
                             </a>
-                            <a target="_blank" href="https://github.com/levintoo" class="flex items-center justify-center bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://github.com/levintoo" class="flex items-center justify-center bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">github</span>
                                 <Github />
                             </a>

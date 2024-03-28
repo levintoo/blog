@@ -93,6 +93,8 @@ class PostController extends Controller
         if ($request->hasFile('image')) {
             $filePath = $validated['image']->store('posts/images', ['disk' => 'public_uploads']);
             $validated['image'] = $filePath;
+        } else {
+            $validated['image'] = $oldImage;
         }
 
         $post->update($validated);
