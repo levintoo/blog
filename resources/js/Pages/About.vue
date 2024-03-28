@@ -2,14 +2,6 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import {Head} from "@inertiajs/vue3";
 
-defineProps({
-    posts: {
-        type: Object,
-        default: {},
-        required: true,
-    }
-})
-
 const email = () => {
     window.open(`mailto:tooklevin@gmail`, "_blank");
 }
@@ -39,7 +31,7 @@ const email = () => {
         </Head>
 
         <template #breadcrumbs>
-            about
+            <span>about</span>
         </template>
 
         <div class="w-full py-5 space-y-10">
@@ -74,8 +66,9 @@ const email = () => {
                          </div>
 
                                 <div class="grid grid-cols-1 lg:grid-cols-3 space-y-4 lg:space-y-0 lg:space-x-4">
-                                    <a href="https://twitter.com/_m0ssad"
+                                    <a href="https://twitter.com/tooklevin"
                                        target="_blank"
+                                       rel="noopener noreferrer"
                                         class="text-[16px] text-center no-underline bg-accent px-10 py-4 rounded hover:shadow-lg">
                                         Twitter
                                     </a>
@@ -86,6 +79,7 @@ const email = () => {
                                 </button>
                                     <a href="https://www.linkedin.com/in/levin-kipkemboi/"
                                        target="_blank"
+                                       rel="noopener noreferrer"
                                        class="text-[16px] text-center no-underline bg-accent px-10 py-4 rounded hover:shadow-lg">
                                         Linkedin
                                     </a>
