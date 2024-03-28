@@ -1,9 +1,7 @@
 <script setup>
 import {Head} from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
-import Like from "@/Components/Icons/Like.vue";
 import Share from "@/Components/Icons/Share.vue";
-import Unlike from "@/Components/Icons/Unlike.vue";
 import {computed, ref} from "vue";
 import Twitter from "@/Components/Icons/Twitter.vue";
 import Whatsapp from "@/Components/Icons/Whatsapp.vue";
@@ -19,15 +17,25 @@ const props = defineProps({
 
 const isOpen = ref(false)
 
-const liked = ref(false)
-
 const currentUrl = computed(() => window.location.href)
 
-const copyLink = () => {
-    navigator.clipboard.writeText(currentUrl.value)
-        .then(() => {})
-        .catch(err => {});
-};
+function copyLink() {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(currentUrl.value)
+    } else {
+        // Old API: document.execCommand
+        const textArea = document.createElement("textarea");
+        textArea.value = currentUrl.value;
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+}
 
 const twitterShareLink = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(props.post.title)}&hashtags=${encodeURIComponent(`${props.post.tag}`)}&via=${encodeURIComponent('tooklevin')}&url=${encodeURIComponent(window.location.href)}`);
 

@@ -147,7 +147,7 @@ function handleSubmit() {
                                 rows="5"
                             />
 
-                            <InputError :message="form.errors.description" class="mt-2"/>
+                            <InputError :message="form.errors.body" class="mt-2"/>
                         </div>
 
                         <InputError v-if="form.errors.id" message="some required parameters are missing" class="mt-2"/>

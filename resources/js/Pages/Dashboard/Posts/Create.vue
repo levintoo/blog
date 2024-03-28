@@ -135,7 +135,7 @@ function handleSubmit() {
                                 rows="5"
                             />
 
-                            <InputError :message="form.errors.description" class="mt-2"/>
+                            <InputError :message="form.errors.body" class="mt-2"/>
                         </div>
 
                         <div class="flex items-center gap-4">
