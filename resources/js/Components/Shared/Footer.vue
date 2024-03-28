@@ -9,7 +9,7 @@
                             Find me on any of these platforms.
                         </p>
                         <div class="mt-6 lg:mb-0 mb-6 flex">
-                            <a href="https://twitter.com/_m0ssad" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a href="https://twitter.com/tooklevin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">twitter</span>
                                 <Twitter />
                             </a>
@@ -33,12 +33,12 @@
                                 <span class="block text-gray-800 font-semibold">Top Picks</span>
                                 <ul class="space-y-2">
                                     <li>
-                                        <Link href="/" class="underline hover:text-gray-800 block text-sm">
+                                        <Link href="/top-web-development-tools-i-use" class="underline hover:text-gray-800 block text-sm">
                                             Top web development tools
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/" class="underline hover:text-gray-800 block text-sm">
+                                        <Link href="/laravel-11-upgrade-guide" class="underline hover:text-gray-800 block text-sm">
                                             Laravel 11 upgrade guide
                                         </Link>
                                     </li>
@@ -79,7 +79,7 @@
                 <div class="flex flex-wrap items-center md:justify-between justify-center">
                     <div class="w-full px-4 mx-auto text-center">
                         <div class="text-gray-800">
-                            © {{ new Date().getFullYear() }} all rights reserved. Proudly hosted on <a target="_blank" href="#" class="underline">Hostme</a>
+                            © {{ new Date().getFullYear() }} all rights reserved. Proudly hosted on <a target="_blank" href="https://www.digitalocean.com/" class="underline">DigitalOcean</a>
                         </div>
                     </div>
                 </div>

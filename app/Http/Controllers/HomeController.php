@@ -36,6 +36,8 @@ class HomeController extends Controller
 
             ->inRandomOrder()
 
+            ->oldest()
+
             ->get()->map(fn($post) => [
                 'title' => $post->title,
                 'description' => $post->description,

@@ -109,17 +109,17 @@ const emit = defineEmits(['toggle-sidebar'])
         <h2>Socials</h2>
         <div class="flex items-center space-x-4">
             <div class="text-transparent bg-primary w-[6px] h-[6px] rounded-full">.</div>
-            <a target="_blank" class="text-sm" href="https://github.com/levintoo">
+            <a rel="noopener noreferrer" target="_blank" class="text-sm" href="https://github.com/levintoo">
                 Github
             </a>
         </div>
         <div class="flex items-center space-x-4">
             <div class="text-transparent bg-primary w-[6px] h-[6px] rounded-full">.</div>
-            <a target="_blank" class="text-sm" href="https://twitter.com/_m0ssad">
+            <a rel="noopener noreferrer" target="_blank" class="text-sm" href="https://twitter.com/tooklevin">
                 Twitter(X)
             </a>
         </div>
-        <div class="flex items-center space-x-4">
+        <div rel="noopener noreferrer" class="flex items-center space-x-4">
             <div class="text-transparent bg-primary w-[6px] h-[6px] rounded-full">.</div>
             <a target="_blank" class="text-sm" href="https://www.linkedin.com/in/levin-kipkemboi">
                 Linkedin

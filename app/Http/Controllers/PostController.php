@@ -20,6 +20,8 @@ class PostController extends Controller
 
             ->inRandomOrder()
 
+            ->oldest()
+
             ->paginate()
 
             ->through(fn ($post) => [
@@ -77,9 +79,9 @@ class PostController extends Controller
      */
     public function show(String $slug)
     {
-        $post = Post::where('slug', $slug)->select('body', 'title', 'description','image')->firstorfail();
+        $post = Post::where('slug', $slug)->select(['body', 'title', 'description','image','tag','updated_at','created_at'])->firstorfail();
 
-        $post = collect(['body' => fn() => Markdown::parse($post->body)->toHtml(), 'title' => $post->title, 'description' => $post->description, 'image' => $post->image,]);
+        $post = collect(['body' => fn() => Markdown::parse($post->body)->toHtml(), 'updated' => $post->updated_at ? $post->updated_at->format('d M Y H:i') : $post->created_at->format('d M Y H:i') , 'title' => $post->title, 'description' => $post->description, 'image' => $post->image, 'tag' => $post->tag ]);
 
         return inertia('Posts/Show', compact('post'));
     }

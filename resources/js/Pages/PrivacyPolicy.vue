@@ -27,7 +27,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
         </Head>
 
         <template #breadcrumbs>
-            privacy policy
+            <span>privacy policy</span>
         </template>
 
         <div class="max-w-7xl mx-auto">

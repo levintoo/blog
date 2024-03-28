@@ -27,7 +27,7 @@ import {Head} from "@inertiajs/vue3";
         </Head>
 
         <template #breadcrumbs>
-            terms of service
+            <span>terms of service</span>
         </template>
 
         <div class="max-w-7xl mx-auto">
