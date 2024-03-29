@@ -5,7 +5,7 @@ import DashboardLayout from "@/Layouts/DashboardLayout.vue";
 defineProps({
     stats: {
         type: Object,
-        default: 0,
+        default: {},
         required: true,
     }
 })
