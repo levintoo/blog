@@ -14,12 +14,15 @@ import {Head} from "@inertiajs/vue3";
                   content="Review these terms to understand your rights and responsibilities as a reader.">
 
             <!-- Open Graph / Facebook -->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://levintoo.com/terms-of-service">
             <meta property="og:title" content="Privacy Policy">
             <meta property="og:description"
                   content="Review these terms to understand your rights and responsibilities as a reader.">
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
 
             <!-- Twitter -->
+            <meta property="twitter:card" content="summary_large_image">
             <meta property="twitter:title" content="Privacy Policy">
             <meta property="twitter:description"
                   content="Review these terms to understand your rights and responsibilities as a reader.">

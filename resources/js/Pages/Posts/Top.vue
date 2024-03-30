@@ -23,12 +23,14 @@ defineProps({
                   content="Discover our most popular content! This page showcases the top posts, covering a range of topics within our focus.">
 
             <!-- Open Graph / Facebook -->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://levintoo.com/posts/top">
             <meta property="og:title" content="Our Top Picks: Top Posts">
             <meta property="og:description"
                   content="Discover our most popular content! This page showcases the top posts, covering a range of topics within our focus.">
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
             <!-- Twitter -->
-
+            <meta property="twitter:card" content="summary_large_image">
             <meta property="twitter:title" content="Our Top Picks: Top Posts">
             <meta property="twitter:description"
                   content="Discover our most popular content! This page showcases the top posts, covering a range of topics within our focus.">

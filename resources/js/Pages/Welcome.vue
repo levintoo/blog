@@ -30,12 +30,15 @@ const isOpen = ref(false)
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
 
         <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://levintoo.com/">
         <meta property="og:title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
         <meta property="og:description"
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
 
         <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://levintoo.com/">
         <meta property="twitter:title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
         <meta property="twitter:description"

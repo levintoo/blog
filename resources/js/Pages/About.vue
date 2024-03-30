@@ -18,12 +18,15 @@ const email = () => {
                   content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">
 
             <!-- Open Graph / Facebook -->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://levintoo.com/about">
             <meta property="og:title" content="About Levin and levintoo.com">
             <meta property="og:description"
                   content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
 
             <!-- Twitter -->
+            <meta property="twitter:card" content="summary_large_image">
             <meta property="twitter:title" content="About Levin and the blog levintoo.com">
             <meta property="twitter:description"
                   content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">

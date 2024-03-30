@@ -14,12 +14,14 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                   content="Read about our commitment to your privacy. This policy clarifies data collection practices on levintoo.com for a transparent experience.">
 
             <!-- Open Graph / Facebook -->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://levintoo.com/privacy-policy">
             <meta property="og:title" content="Privacy Policy">
             <meta property="og:description"
                   content="Read about our commitment to your privacy. This policy clarifies data collection practices on levintoo.com for a transparent experience.">
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
             <!-- Twitter -->
-
+            <meta property="twitter:card" content="summary_large_image">
             <meta property="twitter:title" content="Privacy Policy">
             <meta property="twitter:description"
                   content="Read about our commitment to your privacy. This policy clarifies data collection practices on levintoo.com for a transparent experience.">

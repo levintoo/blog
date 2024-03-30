@@ -56,14 +56,14 @@ const likePost = () => {
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://levintoo.com/">
+        <meta property="og:url" :content="currentUrl">
         <meta property="og:title" :content="post.title">
         <meta property="og:description" :content="post.description">
         <meta property="og:image" :content="`https://levintoo.com/uploads/${post.image}`">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://levintoo.com/">
+        <meta property="twitter:url" :content="currentUrl">
         <meta property="twitter:title" :content="post.title">
         <meta property="twitter:description" :content="post.description">
         <meta property="twitter:image" :content="`https://levintoo.com/uploads/${post.image}`">
