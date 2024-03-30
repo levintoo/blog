@@ -18,8 +18,6 @@ class PostController extends Controller
 
             ->select('slug', 'description', 'tag', 'created_at', 'title', 'image')
 
-            ->inRandomOrder()
-
             ->oldest()
 
             ->paginate()

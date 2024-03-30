@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         $latestPosts = Post::query()
 
-            ->limit(3)
+            ->limit(9)
 
             ->select('title','slug','created_at','description','tag','image')
 
