@@ -38,7 +38,7 @@
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/laravel-11-upgrade-guide" class="underline hover:text-gray-800 block text-sm">
+                                        <Link href="/a-step-by-step-guide-to-upgrade-to-laravel-11" class="underline hover:text-gray-800 block text-sm">
                                             Laravel 11 upgrade guide
                                         </Link>
                                     </li>
