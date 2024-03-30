@@ -6,7 +6,7 @@ import {Head} from "@inertiajs/vue3";
 <template>
     <AppLayout>
         <Head>
-            <title>Terms of Service Policy</title>
+            <title>Terms of Service</title>
 
             <!-- Primary Meta Tags -->
             <meta name="title" content="Terms of Service">
@@ -22,6 +22,7 @@ import {Head} from "@inertiajs/vue3";
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
 
             <!-- Twitter -->
+            <meta property="twitter:url" content="https://levintoo.com/terms-of-service">
             <meta property="twitter:card" content="summary_large_image">
             <meta property="twitter:title" content="Terms of Service">
             <meta property="twitter:description"

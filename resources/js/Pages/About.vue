@@ -27,6 +27,7 @@ const email = () => {
 
             <!-- Twitter -->
             <meta property="twitter:card" content="summary_large_image">
+            <meta property="twitter:url" content="https://levintoo.com/about">
             <meta property="twitter:title" content="About Levin and the blog levintoo.com">
             <meta property="twitter:description"
                   content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">

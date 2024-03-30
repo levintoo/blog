@@ -29,7 +29,9 @@ defineProps({
             <meta property="og:description"
                   content="Get the latest insights and ideas! This page features our newest posts to keep you informed and engaged.">
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
+
             <!-- Twitter -->
+            <meta property="twitter:url" content="https://levintoo.com/posts/latest">
             <meta property="twitter:card" content="summary_large_image">
             <meta property="twitter:title" content="Stay Up-to-Date: Latest Posts">
             <meta property="twitter:description"
