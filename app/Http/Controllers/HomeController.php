@@ -34,8 +34,6 @@ class HomeController extends Controller
 
             ->select('title','slug','created_at','description','tag','image')
 
-            ->inRandomOrder()
-
             ->oldest()
 
             ->get()->map(fn($post) => [
