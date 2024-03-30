@@ -37,9 +37,9 @@ function copyLink() {
     }
 }
 
-const twitterShareLink = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(props.post.title)}&hashtags=${encodeURIComponent(`${props.post.tag}`)}&via=${encodeURIComponent('tooklevin')}&url=${encodeURIComponent(currentUrl)}`);
+const twitterShareLink = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(props.post.title)}&hashtags=${encodeURIComponent(`${props.post.tag}`)}&via=${encodeURIComponent('tooklevin')}&url=${encodeURIComponent(currentUrl.value)}`);
 
-const whatsappShareLink = computed(() => `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out ${props.post.title} at ${currentUrl}`)}`);
+const whatsappShareLink = computed(() => `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out ${props.post.title} at ${currentUrl.value}`)}`);
 
 const likePost = () => {
     console.log(props.post.id)

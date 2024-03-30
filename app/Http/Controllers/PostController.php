@@ -79,7 +79,7 @@ class PostController extends Controller
      */
     public function show(String $slug)
     {
-        $post = Post::where('slug', $slug)->select(['body', 'title', 'description','image','tag','updated_at','created_at'])->firstorfail();
+        $post = Post::where('slug', $slug)->select(['body', 'slug', 'title', 'description','image','tag','updated_at','created_at'])->firstorfail();
 
         $post = collect([
             'body' => fn() => Markdown::parse($post->body)->toHtml(),
