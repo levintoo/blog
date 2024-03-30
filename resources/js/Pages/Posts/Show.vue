@@ -1,5 +1,5 @@
 <script setup>
-import {Head} from '@inertiajs/vue3';
+import {Head, usePage} from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Share from "@/Components/Icons/Share.vue";
 import {computed, ref} from "vue";
@@ -17,7 +17,7 @@ const props = defineProps({
 
 const isOpen = ref(false)
 
-const currentUrl = computed(() => window.location.href)
+const currentUrl = computed(() => props.post.url)
 
 function copyLink() {
     if (navigator.clipboard) {
@@ -37,9 +37,9 @@ function copyLink() {
     }
 }
 
-const twitterShareLink = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(props.post.title)}&hashtags=${encodeURIComponent(`${props.post.tag}`)}&via=${encodeURIComponent('tooklevin')}&url=${encodeURIComponent(window.location.href)}`);
+const twitterShareLink = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(props.post.title)}&hashtags=${encodeURIComponent(`${props.post.tag}`)}&via=${encodeURIComponent('tooklevin')}&url=${encodeURIComponent(currentUrl)}`);
 
-const whatsappShareLink = computed(() => `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out ${props.post.title} at ${window.location.href}`)}`);
+const whatsappShareLink = computed(() => `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out ${props.post.title} at ${currentUrl}`)}`);
 
 const likePost = () => {
     console.log(props.post.id)

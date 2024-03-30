@@ -81,7 +81,15 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $slug)->select(['body', 'title', 'description','image','tag','updated_at','created_at'])->firstorfail();
 
-        $post = collect(['body' => fn() => Markdown::parse($post->body)->toHtml(), 'updated' => $post->updated_at ? $post->updated_at->format('d M Y H:i') : $post->created_at->format('d M Y H:i') , 'title' => $post->title, 'description' => $post->description, 'image' => $post->image, 'tag' => $post->tag ]);
+        $post = collect([
+            'body' => fn() => Markdown::parse($post->body)->toHtml(),
+            'updated' => $post->updated_at ? $post->updated_at->format('d M Y H:i') : $post->created_at->format('d M Y H:i') ,
+            'title' => $post->title,
+            'description' => $post->description,
+            'image' => $post->image,
+            'tag' => $post->tag,
+            'url' => config('app.url').'/'.$post->slug
+        ]);
 
         return inertia('Posts/Show', compact('post'));
     }
