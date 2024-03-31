@@ -77,7 +77,7 @@ const likePost = () => {
 
         <div class="lg:pb-6 pt-12">
             <div class="max-w-7xl mx-auto space-y-8">
-                <div class="px-2 lg:px-0 mx-auto prose text-lg leading-loose" v-html="post.body"></div>
+                <div class="px-2 lg:px-0  text-sm mx-auto prose max-w-[95%] lg:max-w-[60%] leading-loose tracking-wide" v-html="post.body"></div>
 
                 <div class="px-4 sm:px-2 py-3 border-t max-w-[750px] mx-auto flex items-center justify-between">
 
@@ -113,9 +113,3 @@ const likePost = () => {
         </div>
     </AppLayout>
 </template>
-
-<style>
-.prose h1 {
-    @apply text-3xl tracking-wide
-}
-</style>
