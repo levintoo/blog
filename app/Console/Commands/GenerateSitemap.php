@@ -2,10 +2,9 @@
 
 namespace App\Console\Commands;
 
-use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
 
 class GenerateSitemap extends Command
 {
@@ -31,5 +30,8 @@ class GenerateSitemap extends Command
         SitemapGenerator::create(config('app.url'))
             ->getSitemap()
             ->writeToDisk('real_public', 'sitemap.xml');
+        $filePath = Storage::disk('real_public')->path('sitemap.xml');
+
+        chmod($filePath, 0644);
     }
 }
