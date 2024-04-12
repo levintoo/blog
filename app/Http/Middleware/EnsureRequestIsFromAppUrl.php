@@ -21,7 +21,7 @@ class EnsureRequestIsFromAppUrl
 
         $currentUrl = url()->current();
 
-        if(str_starts_with($currentUrl, $appUrl) && !$debug) abort(500);
+        if(!str_starts_with($currentUrl, $appUrl) && !$debug) abort(500);
 
         return $next($request);
     }
