@@ -17,7 +17,9 @@ class EnsureRequestIsFromAppUrl
     {
         $appUrl = config('app.url');
 
-        if(url()->current() != $appUrl) abort(500);
+        $debug = config('app.debug');
+
+        if(url()->current() != $appUrl && !$debug) abort(500);
 
         return $next($request);
     }
