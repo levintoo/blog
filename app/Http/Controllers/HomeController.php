@@ -44,7 +44,10 @@ class HomeController extends Controller
                 'slug' => $post->slug,
                 'image' => $post->image
         ]);
-        return inertia('Welcome', compact('latestPosts','topPosts'));
+
+        $bodyTitle = "Want to Become a Programming Pro? My Posts Will Show You How!";
+
+        return inertia('Welcome', compact(['bodyTitle', 'latestPosts','topPosts']));
     }
 
     /**

@@ -21,3 +21,4 @@ yarn-error.log
 /.vscode
 /public/uploads
 .unlighthouse
+public/sitemap.xml

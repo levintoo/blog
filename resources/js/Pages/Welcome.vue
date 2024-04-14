@@ -35,7 +35,6 @@ defineProps({
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
-        <meta name="twitter:creator" content="@levintoo" />
         <meta property="twitter:url" content="https://levintoo.com/">
         <meta property="twitter:title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
         <meta property="twitter:description"

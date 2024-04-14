@@ -37,6 +37,8 @@ defineProps({
             <meta property="twitter:description"
                   content="Get the latest insights and ideas! This page features our newest posts to keep you informed and engaged.">
             <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+
+            <link rel="canonical" href="https://levintoo.com/posts/latest" />
         </Head>
 
         <template #breadcrumbs>

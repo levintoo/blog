@@ -85,7 +85,7 @@ class PostController extends Controller
             'title' => $post->title,
             'description' => $post->description,
             'image' => $post->image,
-            'tag' => $post->tag,
+            'topic' => $post->tag,
             'url' => config('app.url').'/'.$post->slug
         ]);
 

@@ -13,10 +13,9 @@
         <link rel="shortcut icon" href="/favicon.ico">
 
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://levintoo.com/">
 
         <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://levintoo.com/">
+        <meta name="twitter:creator" content="@levintoo" />
 
         <meta name="theme-color" content="#ffffff">
         <meta name="color-scheme" content="light">

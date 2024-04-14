@@ -77,24 +77,32 @@ const likePost = () => {
             <span class="lg:hidden">post</span>
         </template>
 
+
         <div class="lg:pb-6 pt-12">
-            <div class="max-w-7xl mx-auto space-y-8">
-                <div class="prose-pre:ring-1 prose-pre:bg-white prose-pre:text-gray-600 prose-pre:ring-black/5 prose-pre:shadow px-2 lg:px-0  text-sm mx-auto prose max-w-[95%] lg:max-w-[60%] leading-loose tracking-wide" v-html="post.body"></div>
+            <div class="mx-auto space-y-8 max-w-[95%] lg:max-w-[60%]">
 
-                <div class="px-4 sm:px-2 py-3 border-t max-w-[750px] mx-auto flex items-center justify-between">
+                <span class="font-medium rounded border tracking-wide uppercase py-1 px-2 text-xs">{{ post.topic }}</span>
+<!--                <img class="mx-auto w-full max-w-[95%] lg:max-w-[60%] transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg shadow-md"-->
+<!--                     :src="`/uploads/${post.image}`" :alt="post.title" />-->
 
-                    <p class="text-gray-600">Last updated {{ post.updated }}</p>
+<!--                <div class="prose px-2 lg:px-0 min-w-full leading-loose tracking-wide" v-html="post.body"></div>-->
+                <div class="min-w-full px-2 lg:px-0 prose-ul:pl-[1rem] prose-pre:bg-white prose-pre:ring-1 prose-pre:ring-black/5 prose-pre:shadow prose-pre:text-gray-600 prose-h1:font-medium prose-h1:leading-[2.5rem] prose-h1:text-balance prose-h1:text-gray-800 prose-h2:font-semibold prose-h3:font-medium text-sm mx-auto prose leading-loose tracking-wide" v-html="post.body"></div>
 
-                    <div class="relative inline-block ">
+                <div class="py-3 border-t w-full flex items-center justify-between">
+
+                    <p class="text-gray-600 text-sm">Last updated {{ post.updated }}</p>
+
+                    <div class="relative inline-block text-sm">
                         <!-- Dropdown toggle button -->
-                        <button @click="isOpen = !isOpen" class="relative z-10 block p-2 text-gray-700">
-                            <Share class="h-5 w-auto" />
+                        <button @click="isOpen = !isOpen" class="flex items-center gap-2 px-2 relative z-10 text-gray-600">
+                            Share
+                            <Share class="h-4 w-auto" />
                         </button>
 
                         <!-- Dropdown menu -->
                         <div v-show="isOpen"
                              @click="isOpen = !isOpen"
-                             class="justify-around space-y-3 px-2 absolute z-20 py-2 mt-0 right-0 lg:-right-20 origin-top-right bg-white rounded-md shadow"
+                             class="justify-around space-y-3 px-2 absolute z-20 py-2 mt-1 right-0 origin-top-right bg-white rounded-md shadow"
                         >
                             <button @click="copyLink" class="text-sm flex w-full gap-2 text-gray-600 hover:text-orange-400">
                                 <LinkMinimal class="h-5 w-auto"/>Copy link

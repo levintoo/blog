@@ -22,8 +22,8 @@ import {Head, Link} from "@inertiajs/vue3";
             <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
 
             <!-- Twitter -->
-            <meta property="twitter:url" content="https://levintoo.com/terms-of-service">
             <meta property="twitter:card" content="summary_large_image">
+            <meta property="twitter:url" content="https://levintoo.com/terms-of-service">
             <meta property="twitter:title" content="Terms of Service">
             <meta property="twitter:description"
                   content="Review these terms to understand your rights and responsibilities as a reader.">
