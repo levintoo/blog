@@ -27,6 +27,8 @@ import AppLayout from "@/Layouts/AppLayout.vue";
             <meta property="twitter:description"
                   content="Read about our commitment to your privacy. This policy clarifies data collection practices on levintoo.com for a transparent experience.">
             <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+
+            <link rel="canonical" href="https://levintoo.com/privacy-policy" />
         </Head>
 
         <template #breadcrumbs>

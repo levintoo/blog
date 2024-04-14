@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import {Head} from "@inertiajs/vue3";
+import {Head, Link} from "@inertiajs/vue3";
 </script>
 
 <template>
@@ -28,6 +28,8 @@ import {Head} from "@inertiajs/vue3";
             <meta property="twitter:description"
                   content="Review these terms to understand your rights and responsibilities as a reader.">
             <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+
+            <link rel="canonical" href="https://levintoo.com/terms-of-service" />
         </Head>
 
         <template #breadcrumbs>
@@ -35,9 +37,9 @@ import {Head} from "@inertiajs/vue3";
         </template>
 
         <div class="max-w-7xl mx-auto">
-            <div class="px-2 lg:px-0 mx-auto prose text-lg leading-loose">
+            <div class="px-2 lg:px-0 mx-auto prose text-sm leading-loose">
 
-                <section class="space-y-8 font-light text-[20px]">
+                <section class="space-y-8 font-light">
                     <h1>Terms of Service</h1>
 
                     <p>Last updated: March 24, 2024</p>

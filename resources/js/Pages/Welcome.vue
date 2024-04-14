@@ -1,7 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import AppLayout from "@/Layouts/AppLayout.vue";
-import {ref} from "vue";
 
 defineProps({
     latestPosts: {
@@ -15,9 +14,6 @@ defineProps({
         default: {},
     },
 });
-
-const isOpen = ref(false)
-
 </script>
 
 <template>
@@ -35,15 +31,18 @@ const isOpen = ref(false)
         <meta property="og:title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
         <meta property="og:description"
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
-            <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
+        <meta property="og:image" content="https://levintoo.com/assets/og-image.png">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@levintoo" />
         <meta property="twitter:url" content="https://levintoo.com/">
         <meta property="twitter:title" content="Want to Become a Programming Pro? My Posts Will Show You How!">
         <meta property="twitter:description"
               content="From essential tips to advanced techniques join me as we learn, share, and grow together. ">
-            <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+        <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+
+        <link rel="canonical" href="https://levintoo.com" />
     </Head>
 
     <AppLayout>

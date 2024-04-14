@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import {Head} from "@inertiajs/vue3";
+import {Head, Link} from "@inertiajs/vue3";
 
 const email = () => {
     window.open(`mailto:tooklevin@gmail`, "_blank");
@@ -32,6 +32,8 @@ const email = () => {
             <meta property="twitter:description"
                   content="Get to know the voice behind levintoo.com and understand the passion that drives the content.">
             <meta property="twitter:image" content="https://levintoo.com/assets/og-image.png">
+
+            <link rel="canonical" href="https://levintoo.com/about" />
         </Head>
 
         <template #breadcrumbs>
