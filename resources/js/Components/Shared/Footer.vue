@@ -1,5 +1,5 @@
 <template>
-    <div class="py-4 sm:px-5 bg-gray-200 z-0">
+    <div class="py-4 sm:px-5 bg-gray-200/50 z-0">
         <footer class="relative pt-8 pb-6 px-5">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap text-left lg:text-left">
@@ -9,19 +9,19 @@
                             Find me on any of these platforms.
                         </p>
                         <div class="mt-6 lg:mb-0 mb-6 flex">
-                            <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/tooklevin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/tooklevin" class="flex items-center justify-center bg-white text-gray-400 hover:test-gray-800 shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">twitter</span>
                                 <Twitter />
                             </a>
-                            <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/levin-kipkemboi" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/levin-kipkemboi" class="flex items-center justify-center bg-white text-gray-400 hover:test-gray-800 shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">linkedin</span>
                                 <Linkedin />
                             </a>
-                            <a rel="noopener noreferrer" target="_blank" href="https://instagram.com/too_levin" class="flex items-center justify-center bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://instagram.com/too_levin" class="flex items-center justify-center bg-white text-gray-400 hover:test-gray-800 shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">instagram</span>
                                 <Instagram />
                             </a>
-                            <a rel="noopener noreferrer" target="_blank" href="https://github.com/levintoo" class="flex items-center justify-center bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                            <a rel="noopener noreferrer" target="_blank" href="https://github.com/levintoo" class="flex items-center justify-center bg-white text-gray-400 hover:test-gray-800 shadow-lg font-normal h-10 w-10 rounded-full outline-none focus:outline-none mr-2" type="button">
                                 <span class="sr-only">github</span>
                                 <Github />
                             </a>
