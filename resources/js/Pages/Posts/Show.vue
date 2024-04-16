@@ -102,19 +102,18 @@ const likePost = () => {
                         <!-- Dropdown menu -->
                         <div v-show="isOpen"
                              @click="isOpen = !isOpen"
-                             class="justify-around space-y-3 px-2 absolute z-20 py-2 mt-1 right-0 origin-top-right bg-white rounded-md shadow"
+                             class="justify-around space-y-3.5 px-3 py-2 absolute z-20 mt-2 right-0 origin-top-right shadow bg-white rounded-md"
                         >
-                            <button @click="copyLink" class="text-sm flex w-full gap-2 text-gray-600 hover:text-orange-400">
-                                <LinkMinimal class="h-5 w-auto"/>Copy link
+                            <button @click="copyLink" class="text-sm/relaxed flex items-center w-full gap-2 text-gray-600 hover:text-orange-400">
+                                <LinkMinimal class="h-4 w-auto"/>Copy
                             </button>
-
-                            <a :href="whatsappShareLink" target="_blank" rel="noopener noreferrer" class="text-sm flex w-full gap-2 text-gray-500 hover:text-orange-400">
-                                <Whatsapp class="h-5 w-auto"/>Whatsapp
+                            <a :href="twitterShareLink" target="_blank" rel="noopener noreferrer" class="text-sm/relaxed flex items-center w-full gap-2 text-gray-500 hover:text-orange-400">
+                                <Twitter class="h-4 w-auto"/>Twitter
+                            </a>
+                            <a :href="whatsappShareLink" target="_blank" rel="noopener noreferrer" class="text-sm/relaxed flex items-center w-full gap-2 text-gray-500 hover:text-orange-400">
+                                <Whatsapp class="h-4 w-auto"/>Whatsapp
                             </a>
 
-                            <a :href="twitterShareLink" target="_blank" rel="noopener noreferrer" class="text-sm flex w-full gap-2 text-gray-500 hover:text-orange-400">
-                                <Twitter class="h-5 w-auto"/>Twitter
-                            </a>
                         </div>
 
                     </div>
