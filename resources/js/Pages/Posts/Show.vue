@@ -78,7 +78,7 @@ const likePost = () => {
         </template>
 
 
-        <div class="lg:pb-6 pt-12">
+        <div class="lg:pb-6 pt-6 lg:pt-12">
             <div class="mx-auto space-y-8 max-w-[95%] lg:max-w-[60%]">
 
                 <span class="font-medium rounded border tracking-wide uppercase py-1 px-2 text-xs">{{ post.topic }}</span>

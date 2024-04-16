@@ -21,7 +21,7 @@ const toggleSidebar = () => {
                 <div class="w-full py-4 sm:px-5">
 
                     <div class="flex items-center justify-between px-5 py-1">
-                        <h3 class="tracking-wide text-sm flex space-x-1.5">
+                        <h3 class="tracking-wide text-gray-700 text-sm flex space-x-1.5">
                             <Link href="/">levintoo.com</Link>
                             <span class="text-primary"> / </span>
                             <slot name="breadcrumbs">

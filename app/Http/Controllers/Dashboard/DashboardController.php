@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Asset;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ class DashboardController extends Controller
             'trashed' => Post::onlyTrashed()->count(),
             'total' => Post::withTrashed()->count(),
             'users' => User::withTrashed()->count(),
+            'assets' => Asset::count(),
         ]);
 
         return inertia('Dashboard/Dashboard', compact('stats'));

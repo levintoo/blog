@@ -12,6 +12,9 @@ import Home from "@/Components/Icons/Home.vue";
 import Info from "@/Components/Icons/Info.vue";
 import Send from "@/Components/Icons/Send.vue";
 import Person from "@/Components/Icons/Person.vue";
+import Assets from "@/Components/Icons/Assets.vue";
+
+;
 
 defineProps({
     isDashboard: {
@@ -85,6 +88,11 @@ const emit = defineEmits(['toggle-sidebar'])
                   class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/posts">
                 <Post class="w-auto h-5"/>
                 <span class="text-sm">Posts</span>
+            </Link>
+            <Link :class="$page.url === '/dashboard/assets' ? 'text-primary font-medium' : '' "
+                  class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/assets">
+                <Assets class="w-auto h-5"/>
+                <span class="text-sm">Assets</span>
             </Link>
             <Link :class="$page.url === '/dashboard/users' ? 'text-primary font-medium' : '' "
                   class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/users">

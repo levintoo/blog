@@ -34,6 +34,9 @@ defineProps({
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">{{ stats.users.toLocaleString() }} total users</div>
                 </div>
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900">{{ stats.assets.toLocaleString() }} post assets</div>
+                </div>
             </div>
         </div>
     </DashboardLayout>

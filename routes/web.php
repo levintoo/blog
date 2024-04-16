@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\Dashboard\AssetController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\PostController as AdminPostController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\UserController as AdminUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\Dashboard\PostController as AdminPostController;;
 use Illuminate\Support\Facades\Route;
+
+;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -54,6 +57,23 @@ Route::middleware(['auth', 'verified'])
                 Route::delete('/{slug}/delete/force', 'destroy')->name('destroy.force');
 
                 Route::patch('/{slug}/restore', 'restore')->name('restore');
+            });
+
+        Route::prefix('assets')
+
+            ->name('assets.')
+
+            ->controller(AssetController::class)
+
+            ->group(function () {
+
+                Route::get('/', 'index')->name('index');
+
+                Route::get('/create', 'create')->name('create');
+
+                Route::post('/create', 'store')->name('store');
+
+                Route::delete('/{asset}/delete/force', 'destroy')->name('destroy.force');
             });
 
         Route::prefix('users')
