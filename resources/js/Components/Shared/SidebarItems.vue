@@ -84,17 +84,17 @@ const emit = defineEmits(['toggle-sidebar'])
                 <Dashboard class="w-auto h-5"/>
                 <span class="text-sm">Dashboard</span>
             </Link>
-            <Link :class="$page.url === '/dashboard/posts' ? 'text-primary font-medium' : '' "
+            <Link :class="$page.url.startsWith('/dashboard/posts') ? 'text-primary font-medium' : '' "
                   class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/posts">
                 <Post class="w-auto h-5"/>
                 <span class="text-sm">Posts</span>
             </Link>
-            <Link :class="$page.url === '/dashboard/assets' ? 'text-primary font-medium' : '' "
+            <Link :class="$page.url.startsWith('/dashboard/assets') ? 'text-primary font-medium' : '' "
                   class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/assets">
                 <Assets class="w-auto h-5"/>
                 <span class="text-sm">Assets</span>
             </Link>
-            <Link :class="$page.url === '/dashboard/users' ? 'text-primary font-medium' : '' "
+            <Link :class="$page.url.startsWith('/dashboard/users') ? 'text-primary font-medium' : '' "
                   class="flex items-center space-x-3 hover:text-primary/80" href="/dashboard/users">
                 <CogWheel class="w-auto h-5"/>
                 <span class="text-sm">Users</span>
