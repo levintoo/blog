@@ -40,6 +40,7 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'status' => ['required','in:0,1'],
             'title' => ['nullable','max:255'],
             'tag' => ['nullable','max:255'],
             'slug' => ['nullable','max:255', Rule::unique('posts')->ignore($this->id)],

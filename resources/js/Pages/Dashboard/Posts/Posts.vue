@@ -70,6 +70,9 @@ const deletePost = (id) => {
                                                 </div>
                                             </th>
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                                Status
+                                            </th>
+                                            <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                                 Title
                                             </th>
                                             <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
@@ -91,6 +94,10 @@ const deletePost = (id) => {
                                                     <input disabled id="checkbox-table-1" type="checkbox" :class="post.trashed ? ' text-red-600 bg-red-100 border-red-300' : '' " class="w-4 h-4 text-green-600 bg-green-100 rounded border-green-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                                     <label for="checkbox-table-1" class="sr-only">checkbox</label>
                                                 </div>
+                                            </td>
+
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
+                                                {{ post.status }}
                                             </td>
 
                                             <td :title="post.description" class="py-4 px-6 text-sm font-medium text-gray-900 dark:text-white">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PostStatus;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
@@ -16,7 +17,9 @@ class PostController extends Controller
     {
         $posts = Post::query()
 
-            ->select('slug', 'description', 'tag', 'created_at', 'title', 'image')
+            ->select('slug', 'description', 'tag', 'created_at', 'title', 'image', 'status')
+
+            ->where('status', PostStatus::PUBLIC)
 
             ->oldest()
 
@@ -38,7 +41,9 @@ class PostController extends Controller
     {
         $posts = Post::query()
 
-            ->select('slug', 'description', 'tag', 'created_at', 'title', 'image')
+            ->select('slug', 'description', 'tag', 'created_at', 'title', 'image', 'status')
+
+            ->where('status', PostStatus::PUBLIC)
 
             ->latest()
 

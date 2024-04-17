@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -18,7 +18,7 @@ class PostController extends Controller
     {
         $posts = Post::query()
 
-            ->select(['title', 'description', 'image', 'id', 'slug', 'created_at', 'updated_at', 'deleted_at'])
+            ->select(['status', 'title', 'description', 'image', 'id', 'slug', 'created_at', 'updated_at', 'deleted_at'])
 
             ->withTrashed()
 
@@ -27,6 +27,7 @@ class PostController extends Controller
             ->paginate()
 
             ->through(fn($post) => [
+                'status' => PostStatus::getValueName($post->status),
                 'title' => $post->title,
                 'description' => $post->description,
                 'image' => $post->image,

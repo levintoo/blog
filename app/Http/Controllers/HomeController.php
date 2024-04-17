@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PostStatus;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,9 @@ class HomeController extends Controller
 
             ->limit(9)
 
-            ->select('title','slug','created_at','description','tag','image')
+            ->select('status' ,'title','slug','created_at','description','tag','image')
+
+            ->where('status', PostStatus::PUBLIC)
 
             ->latest()
 
@@ -32,7 +35,9 @@ class HomeController extends Controller
 
             ->limit(3)
 
-            ->select('title','slug','created_at','description','tag','image')
+            ->where('status', PostStatus::PUBLIC)
+
+            ->select('status','title','slug','created_at','description','tag','image')
 
             ->oldest()
 

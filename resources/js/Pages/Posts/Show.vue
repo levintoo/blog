@@ -37,7 +37,7 @@ function copyLink() {
     }
 }
 
-const twitterShareLink = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(props.post.title)}&hashtags=${encodeURIComponent(`${props.post.tag}`)}&via=${encodeURIComponent('tooklevin')}&url=${encodeURIComponent(currentUrl.value)}`);
+const twitterShareLink = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(props.post.title)}&via=${encodeURIComponent('tooklevin')}&url=${encodeURIComponent(currentUrl.value)}`);
 
 const whatsappShareLink = computed(() => `https://api.whatsapp.com/send?text=${encodeURIComponent(`Check out ${props.post.title} at ${currentUrl.value}`)}`);
 
@@ -82,10 +82,7 @@ const likePost = () => {
             <div class="mx-auto space-y-8 max-w-[95%] lg:max-w-[60%]">
 
                 <span class="font-medium rounded border tracking-wide uppercase py-1 px-2 text-xs">{{ post.topic }}</span>
-<!--                <img class="mx-auto w-full max-w-[95%] lg:max-w-[60%] transition-all ease-in-out rounded delay-50 hover:opacity-80 hover:shadow-lg shadow-md"-->
-<!--                     :src="`/uploads/${post.image}`" :alt="post.title" />-->
 
-<!--                <div class="prose px-2 lg:px-0 min-w-full leading-loose tracking-wide" v-html="post.body"></div>-->
                 <div class="min-w-full px-2 lg:px-0 prose-ul:pl-[1rem] prose-pre:bg-white prose-pre:ring-1 prose-pre:ring-black/5 prose-pre:shadow prose-pre:text-gray-600 prose-h1:font-medium prose-h1:leading-[2.5rem] prose-h1:text-balance prose-h1:text-gray-800 prose-h2:font-semibold prose-h3:font-medium text-sm mx-auto prose leading-loose tracking-wide" v-html="post.body"></div>
 
                 <div class="py-3 border-t w-full flex items-center justify-between">

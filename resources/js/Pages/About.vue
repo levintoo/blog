@@ -46,7 +46,7 @@ const email = () => {
             </h1>
             <div>
                 <div class="max-w-7xl mx-auto">
-                    <div class="px-2 lg:px-0 mx-auto prose text-lg leading-loose">
+                    <div class="px-2 lg:px-0 mx-auto max-w-[95%] lg:max-w-[60%] prose leading-loose">
 
                             <section class="space-y-8">
 

@@ -6,6 +6,7 @@ import InputLabel from "@/Components/Reused/InputLabel.vue";
 import TextInput from "@/Components/Reused/TextInput.vue";
 import InputError from "@/Components/Reused/InputError.vue";
 import TextAreaInput from "@/Components/Reused/TextAreaInput.vue";
+import SelectInput from "@/Components/Reused/SelectInput.vue";
 
 const page = usePage()
 
@@ -19,6 +20,7 @@ const props = defineProps({
 
 const form = useForm({
     id: props.post.id,
+    status: props.post.status,
     title: props.post.title,
     slug: props.post.slug,
     description: props.post.description,
@@ -88,6 +90,24 @@ function handleSubmit() {
                             />
 
                             <InputError :message="form.errors.slug" class="mt-2"/>
+                        </div>
+
+                        <div class="mt-6">
+                            <InputLabel for="status" value="Status"/>
+
+                            <SelectInput
+                                id="slug"
+                                ref="slug"
+                                v-model="form.status"
+                                autocomplete="status"
+                                class="mt-1 block w-full"
+                                type="text"
+                            >
+                                <option value="0">Public</option>
+                                <option value="1">Unlisted</option>
+                            </SelectInput>
+
+                            <InputError :message="form.errors.status" class="mt-2"/>
                         </div>
 
                         <div class="mt-6">

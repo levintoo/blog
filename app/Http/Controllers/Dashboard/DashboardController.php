@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
 use App\Models\Asset;
 use App\Models\Post;
@@ -21,6 +22,8 @@ class DashboardController extends Controller
             'total' => Post::withTrashed()->count(),
             'users' => User::withTrashed()->count(),
             'assets' => Asset::count(),
+            'unlisted' => Post::where('status', PostStatus::UNLISTED)->count(),
+            'public' => Post::where('status', PostStatus::PUBLIC)->count(),
         ]);
 
         return inertia('Dashboard/Dashboard', compact('stats'));

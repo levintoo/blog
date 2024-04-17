@@ -106,10 +106,6 @@ Route::get('privacy-policy', function () {
     return inertia('PrivacyPolicy');
 });
 
-Route::get('terms-of-service', function () {
-    return inertia('TermsOfService');
-});
-
 Route::prefix('posts')
 
     ->name('posts.')

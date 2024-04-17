@@ -26,6 +26,12 @@ defineProps({
                     <div class="p-6 text-gray-900">{{ stats.active.toLocaleString() }} active posts</div>
                 </div>
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900">{{ stats.unlisted.toLocaleString() }} unlisted posts</div>
+                </div>
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900">{{ stats.public.toLocaleString() }} public posts</div>
+                </div>
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">{{ stats.trashed.toLocaleString() }} trashed posts</div>
                 </div>
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
